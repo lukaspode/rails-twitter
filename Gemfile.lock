@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 31d99d14c1e7d976e89f83c9496c0d97baa6aa3e
+  branch: main
+  specs:
+    faker (3.2.2)
+      i18n (>= 1.8.11, < 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -243,6 +251,7 @@ DEPENDENCIES
   bootsnap
   cssbundling-rails
   debug
+  faker!
   importmap-rails
   pg (~> 1.1)
   puma (>= 5.0)

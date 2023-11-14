@@ -6,6 +6,7 @@ gem "rails", "~> 7.1.2"
 
 gem "bootsnap", require: false
 gem "cssbundling-rails"
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
 gem "importmap-rails"
 gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
