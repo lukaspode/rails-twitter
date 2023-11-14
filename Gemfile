@@ -8,6 +8,7 @@ gem 'rails', '~> 7.1.2'
 
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
+gem 'devise', '~> 4.9', '>= 4.9.3'
 gem 'faker', '~> 3.2', '>= 3.2.2'
 gem 'importmap-rails'
 gem 'pg', '~> 1.1'
