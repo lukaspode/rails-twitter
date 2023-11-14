@@ -1,3 +1,3 @@
-group :development, :test do
-  gem 'factory_bot_rails', '~> 6.2'
+RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
 end
