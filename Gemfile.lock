@@ -305,8 +305,8 @@ DEPENDENCIES
   bootsnap
   cssbundling-rails
   debug
-  dotenv-rails (~> 2.8, >= 2.8.1)
   devise (~> 4.9, >= 4.9.3)
+  dotenv-rails (~> 2.8, >= 2.8.1)
   factory_bot_rails (~> 6.2)
   faker (~> 3.2, >= 3.2.2)
   importmap-rails
