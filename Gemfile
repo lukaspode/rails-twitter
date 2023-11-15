@@ -8,7 +8,7 @@ gem 'rails', '~> 7.1.2'
 
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
-gem 'faker', '~> 3.2', '>= 3.2.2'
+gem 'devise', '~> 4.9', '>= 4.9.3'
 gem 'importmap-rails'
 gem 'pg', '~> 1.1'
 gem 'puma', '>= 5.0'
@@ -24,6 +24,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri windows]
   gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
   gem 'factory_bot_rails', '~> 6.2'
+  gem 'faker', '~> 3.2', '>= 3.2.2'
   gem 'rspec-rails', '~> 6.0', '>= 6.0.3'
 end
 
