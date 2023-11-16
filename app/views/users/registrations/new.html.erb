@@ -1,0 +1,38 @@
+<div class="w-screen h-screen flex">
+
+    <div class="max-w-[600px] max-h-[650px] w-full h-full m-auto rounded rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.15)] flex pt-16">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'w-full mx-14 flex flex-col gap-y-5' }) do |f| %>
+        <%#= image_tag 'twitter_icon', class:'w-8 h-8 mx-auto mb-2' %>
+
+        <h2 class="text-2xl font-semibold text-black mb-2.5">Create your account</h2>
+
+        <div class="field w-full">
+        <%= f.text_field :email, autofocus: true, autocomplete: "nombre", placeholder: 'Name', class: 'w-full py-5 px-6 text-xs rounded-md border border-[#D9D9D9]' %>
+        </div>
+
+        <div class="field w-full">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'w-full py-5 px-6 text-xs rounded-md border border-[#D9D9D9]' %>
+        </div>
+        
+        <div class="field w-full">
+        <%= f.password_field :password, autocomplete: "password", placeholder: 'Password', class: 'w-full py-5 px-6 text-xs rounded-md  border border-[#D9D9D9]' %>
+        </div>
+
+        <div>
+            <h4 class="font-semibold text-base my-2.5" >Date of birth</h4>
+            <p class="text-sm text-dark-300">This will not be shown publicly. Confirm your own age, even if this account is for as business, a pet, or something else.</p>
+        </div>
+        
+        
+        <div class="field w-full ">
+        <%= f.password_field :password, autocomplete: "password", placeholder: 'Date of birth', class: 'w-full py-5 px-6 text-xs rounded-md  border border-[#D9D9D9]' %>
+        </div>
+
+        <div class="actions">
+        <%= f.submit "Next", class: 'mb-8 bottom-0 rounded-full bg-black text-white font-extrabold text-base w-full py-2.5 cursor-pointer' %>
+        </div>
+
+
+    <% end %>
+    </div>
+</div>
