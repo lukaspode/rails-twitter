@@ -7,11 +7,11 @@ RSpec.describe User, type: :model do
     subject { user.valid? }
 
     let(:user) { build(:user, email:, password:, name:, birth:) }
-    let(:name) {'Lucas'}
+    let(:name) { 'Lucas' }
     let(:email) { 'someemail@example.com' }
     let(:password) { 'validpassword' }
     let(:birth) { '1990-11-01' }
-    let(:username) { 'lucasuru'}
+    let(:username) { 'lucasuru' }
 
     context 'email validations' do
       context 'when the email has an invalid format' do
@@ -67,23 +67,20 @@ RSpec.describe User, type: :model do
 
     context 'birth validations' do
       context 'when the age of the user is under 18' do
-        let(:birth) {'2010-03-01'}
+        let(:birth) { '2010-03-01' }
 
         it 'is invalid' do
           expect(subject).to eq(false)
         end
       end
 
-
       context 'when the age of the user is over 18' do
-        let(:birth) {'2000-03-01'}
+        let(:birth) { '2000-03-01' }
 
         it 'is valid' do
           expect(subject).to eq(true)
         end
       end
-
     end
-
   end
 end
