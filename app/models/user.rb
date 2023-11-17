@@ -6,4 +6,15 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  validates :name, :birth, presence: true
+  validate :validate_age
+
+  private
+
+  def validate_age
+    return unless birth.present? && (birth.to_date > 18.years.ago.to_date)
+
+    errors.add(:birth, ': your age must be over 18')
+  end
 end
