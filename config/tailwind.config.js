@@ -35,4 +35,5 @@ module.exports = {
     require("@tailwindcss/typography"),
     require("@tailwindcss/container-queries"),
   ],
+  safelist: ['field_with_errors']
 };

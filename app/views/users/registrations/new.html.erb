@@ -4,6 +4,7 @@
     <h3 class="m-6 text-xl leading-5 font-semibold">Step 2 of 3</h3>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'w-full mx-14 flex flex-col gap-y-5' }) do |f| %>
         <%#= image_tag 'twitter_icon', class:'w-8 h-8 mx-auto mb-2' %>
+        <%= render '/shared/errors', resource: %>
 
         <h2 class="text-2xl font-semibold text-black mb-2.5">Create your account</h2>
 
@@ -11,7 +12,7 @@
         <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Name', class: 'w-full py-5 px-6 text-xs rounded-md border border-[#D9D9D9]' %>
         </div>
 
-        <div class="field w-full">
+        <div class="w-full">
         <%= f.email_field :email, autocomplete: "email", placeholder: 'Email', class: 'w-full py-5 px-6 text-xs rounded-md border border-[#D9D9D9]' %>
         </div>
         
