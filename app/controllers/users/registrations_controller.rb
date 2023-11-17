@@ -6,9 +6,9 @@ module Users
 
     private
 
-      def sign_up_params
-        params.require(resource_name).
-          permit(:name, :email, :password,:birth)
-      end
+    def sign_up_params
+      params.require(resource_name)
+            .permit(:name, :email, :password, :birth)
+    end
   end
-end;
+end
