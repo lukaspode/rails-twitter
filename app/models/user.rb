@@ -8,14 +8,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, :birth, presence: true
+  validates :username, presence: true, uniqueness: { case_sensitive: false }
   validate :validate_age
 
   private
 
   def validate_age
-
     return unless birth.present? && (birth > 18.years.ago.to_date)
 
-    errors.add(:birth, ': your age must be over 18')
+    errors.add(:birth, 'your age must be over 18')
   end
 end

@@ -1,7 +1,7 @@
 <div class="w-screen h-screen flex">
 
-  <div class="max-w-[600px] max-h-[650px] w-full h-full m-auto rounded rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.15)] flex flex-wrap">
-    <h3 class="m-6 text-xl leading-5 font-semibold">Step 2 of 3</h3>
+  <div class="max-w-[600px] max-h-[750px] w-full h-full m-auto rounded rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.15)] flex flex-wrap">
+    <h3 class="heading-3">Step 2 of 3</h3>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'w-full mx-14 flex flex-col gap-y-5' }) do |f| %>
       <%= render '/shared/errors', resource: %>
 
@@ -13,6 +13,10 @@
 
       <div class="w-full">
         <%= f.email_field :email, autocomplete: "email", placeholder: 'Email', class: 'input' %>
+      </div>
+
+      <div class="w-full">
+        <%= f.text_field :username, autocomplete: "username", placeholder: 'Username', class: 'input' %>
       </div>
     
       <div class="w-full">

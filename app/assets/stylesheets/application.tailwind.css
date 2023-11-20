@@ -46,6 +46,10 @@
     @apply text-2xl font-semibold text-black mb-2.5
   }
 
+  .heading-3{
+    @apply text-xl font-semibold leading-5 text-black m-6
+  }
+
   .heading-4{
     @apply font-semibold text-base my-2.5
   }
