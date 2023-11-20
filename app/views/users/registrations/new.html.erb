@@ -5,33 +5,32 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'w-full mx-14 flex flex-col gap-y-5' }) do |f| %>
       <%= render '/shared/errors', resource: %>
 
-      <h2 class="text-2xl font-semibold text-black mb-2.5">Create your account</h2>
+      <h2 class="heading-2">Create your account</h2>
 
       <div class="w-full">
-        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Name', class: 'w-full py-5 px-6 text-xs rounded-md border border-[#D9D9D9]' %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Name', class: 'input' %>
       </div>
 
       <div class="w-full">
-        <%= f.email_field :email, autocomplete: "email", placeholder: 'Email', class: 'w-full py-5 px-6 text-xs rounded-md border border-[#D9D9D9]' %>
+        <%= f.email_field :email, autocomplete: "email", placeholder: 'Email', class: 'input' %>
       </div>
     
       <div class="w-full">
-        <%= f.password_field :password, autocomplete: "password", placeholder: 'Password', class: 'w-full py-5 px-6 text-xs rounded-md  border border-[#D9D9D9]' %>
+        <%= f.password_field :password, autocomplete: "password", placeholder: 'Password', class: 'input' %>
       </div>
 
       <div>
-        <h4 class="font-semibold text-base my-2.5" >Date of birth</h4>
+        <h4 class="heading-4" >Date of birth</h4>
         <p class="text-sm text-dark-300">This will not be shown publicly. Confirm your own age, even if this account is for as business, a pet, or something else.</p>
       </div>
     
       <div class="w-full ">
-        <%= f.date_field :birth, autocomplete: "birth", placeholder: 'Date of birth', class: 'w-full py-5 px-6 text-xs rounded-md  border border-[#D9D9D9]' %>
+        <%= f.date_field :birth, autocomplete: "birth", placeholder: 'Date of birth', class: 'input' %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Next", class: 'mb-8 bottom-0 rounded-full bg-black text-white font-extrabold text-base w-full py-2.5 cursor-pointer' %>
+        <%= f.submit "Next", class: 'btn btn-dark btn-lg' %>
       </div>
-
     <% end %>
   </div>
 </div>

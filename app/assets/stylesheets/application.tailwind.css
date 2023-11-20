@@ -6,15 +6,20 @@
 
 @layer components {
   .btn {
-    @apply cursor-pointer rounded rounded-full text-center font-bold text-lg align-middle w-full ease-in duration-100;
+    @apply cursor-pointer rounded rounded-full text-center font-extrabold text-base align-middle w-full ease-in duration-100 py-2.5;
   }
-
+  /* mb-8 bottom-0 rounded-full bg-black text-white font-extrabold text-base w-full py-2.5 cursor-pointer */
   .btn-primary {
     @apply bg-primary text-white hover:bg-primary-dark;
   }
 
   .btn-secondary {
     @apply bg-white text-primary border border-primary hover:btn-primary;
+  }
+
+  .btn-dark {
+    @apply bg-black text-white hover:btn-primary;
+
   }
 
   .btn-sm {
@@ -35,6 +40,18 @@
 
   .alert {
    @apply bg-red-300 rounded-md text-red-800 px-4 py-2; 
+  }
+
+  .heading-2{
+    @apply text-2xl font-semibold text-black mb-2.5
+  }
+
+  .heading-4{
+    @apply font-semibold text-base my-2.5
+  }
+
+  .input{
+    @apply w-full py-5 px-6 text-xs rounded-md border border-[#D9D9D9]
   }
 }
 
