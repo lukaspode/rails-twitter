@@ -83,7 +83,7 @@ RSpec.describe User, type: :model do
       end
 
       context 'when birth field is empty' do
-        let(:birth) { }
+        let(:birth) { '' }
         it 'is not valid' do
           expect(subject).to eq(false)
         end
@@ -106,7 +106,7 @@ RSpec.describe User, type: :model do
       end
 
       context 'when the username field is empty' do
-        let(:username) { }
+        let(:username) { '' }
         it 'is not valid' do
           expect(subject).to eq(false)
         end
@@ -115,13 +115,12 @@ RSpec.describe User, type: :model do
 
     context 'name valdiations' do
       context 'when the name field is empty' do
-        let(:name) { }
+        let(:name) { '' }
         it 'is valid' do
           expect(subject).to eq(false)
         end
         # it { should validate_presence_of(:name) }
       end
-
     end
   end
 end
