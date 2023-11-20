@@ -8,7 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, :birth, presence: true
-  validates :username, presence: true, uniqueness: { case_sensitive: false }
+  validates :username, uniqueness: { case_sensitive: false }, presence: true
   validate :validate_age
 
   private
