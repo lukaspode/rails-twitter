@@ -6,6 +6,9 @@ FactoryBot.define do
     password { Faker::Internet.password(min_length: 6) }
     name { Faker::Name.first_name }
     birth { Faker::Date.birthday(min_age: 18) }
-    username { Faker::Internet.username }
+    sequence :username do |n|
+      "#{Faker::Internet.username}"+"#{n}"
+
+    end
   end
 end

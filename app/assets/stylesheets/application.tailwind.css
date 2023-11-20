@@ -8,7 +8,7 @@
   .btn {
     @apply cursor-pointer rounded rounded-full text-center font-extrabold text-base align-middle w-full ease-in duration-100 py-2.5;
   }
-  /* mb-8 bottom-0 rounded-full bg-black text-white font-extrabold text-base w-full py-2.5 cursor-pointer */
+  
   .btn-primary {
     @apply bg-primary text-white hover:bg-primary-dark;
   }
@@ -19,7 +19,6 @@
 
   .btn-dark {
     @apply bg-black text-white hover:btn-primary;
-
   }
 
   .btn-sm {
