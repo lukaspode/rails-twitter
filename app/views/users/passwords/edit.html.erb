@@ -18,12 +18,8 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:'Repeat Password', class:'input' %>
       </div>
 
-      <div class="btn border border-dark-400 hover:bg-black hover:text-white mt-auto mb-0">
-        <%= link_to 'Back', new_user_password_path, class: '' %>
-      </div>
-      <div class="actions mt-auto mb-0">
+      <%= link_to 'Back', new_user_password_path, class: 'btn border border-dark-400 hover:bg-black hover:text-white mt-auto mb-0' %>
         <%= f.submit "Next", class: 'btn btn-dark btn-lg' %>
-      </div>
     <% end %>
     
     
