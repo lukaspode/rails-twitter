@@ -1,5 +1,6 @@
-class AddConfirmableToDevise < ActiveRecord::Migration[7.1]
+# frozen_string_literal: true
 
+class AddConfirmableToDevise < ActiveRecord::Migration[7.1]
   def up
     change_table :users, bulk: true do |t|
       t.string :confirmation_token
@@ -18,5 +19,4 @@ class AddConfirmableToDevise < ActiveRecord::Migration[7.1]
       t.remove :unconfirmed_email
     end
   end
-
 end
