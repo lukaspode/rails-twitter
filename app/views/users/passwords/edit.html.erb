@@ -1,8 +1,10 @@
 
 <div class="w-screen h-screen flex">
   <div class="max-w-[600px] max-h-[650px] min-h-[650px] w-full m-auto rounded rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.15)] flex py-6">
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: 'w-full mx-14 flex flex-col gap-y-5' }) do |f| %>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: {method: :put, class: 'w-full mx-14 flex flex-col gap-y-5' }) do |f| %>
+
       <%= render "/shared/errors", resource: resource %>
+      <%= f.hidden_field :reset_password_token %>
       <%= image_tag 'twitter_icon', class:'w-8 h-8 mx-auto mb-0.75rem' %>
       <h2 class="heading-2 mb-0 font-extrabold text-center">Enter new password</h2>
       <p class="text-base text-dark-400 text-center max-w-[29.25rem]">Enter a new password for your account.</p>
