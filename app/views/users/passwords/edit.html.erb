@@ -1,0 +1,29 @@
+
+<div class="w-screen h-screen flex">
+  <div class="max-w-[600px] max-h-[650px] min-h-[650px] w-full m-auto rounded rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.15)] flex py-6">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: 'w-full mx-14 flex flex-col gap-y-5' }) do |f| %>
+      <%= render "/shared/errors", resource: resource %>
+      <%= image_tag 'twitter_icon', class:'w-8 h-8 mx-auto mb-0.75rem' %>
+      <h2 class="heading-2 mb-0 font-extrabold text-center">Enter new password</h2>
+      <p class="text-base text-dark-400 text-center max-w-[29.25rem]">Enter a new password for your account.</p>
+
+      <div class="field w-full">
+        <%= f.password_field :password, autofocus: true, autocomplete: "new-password", placeholder: "New Password", class: 'input' %>
+        <p class="text-sm mt-1.5 text-dark-300 text-center max-w-[29.25rem]">Passwords must contain at least one capital letter, and one symbol.</p>
+      </div>
+
+      <div class="field w-full">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:'Repeat Password', class:'input' %>
+      </div>
+
+      <div class="btn border border-dark-400 hover:bg-black hover:text-white mt-auto mb-0">
+        <%= link_to 'Back', new_user_password_path, class: '' %>
+      </div>
+      <div class="actions mt-auto mb-0">
+        <%= f.submit "Next", class: 'btn btn-dark btn-lg' %>
+      </div>
+    <% end %>
+    
+    
+  </div>
+</div>
