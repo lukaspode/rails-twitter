@@ -6,7 +6,7 @@
       <%= render "/shared/errors", resource: resource %>
       <%= image_tag 'twitter_icon', class:'w-8 h-8 mx-auto mb-0.75rem' %>
       <h2 class="heading-2 font-bold text-center">Find your twitter account</h2>
-      <p class="text-sm text-dark-300 text-center max-w-[29.25rem]">Enter the emai associated with your account to change your password.</p>
+      <p class="description-1">Enter the emai associated with your account to change your password.</p>
       <div class="field w-full">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'input' %>
       </div>
