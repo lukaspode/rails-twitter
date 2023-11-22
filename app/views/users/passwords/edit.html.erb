@@ -1,11 +1,12 @@
-
 <div class="w-screen h-screen flex">
-  <div class="max-w-[600px] max-h-[650px] min-h-[650px] w-full m-auto rounded rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.15)] flex py-6">
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: {method: :put, class: 'w-full mx-14 flex flex-col gap-y-5' }) do |f| %>
-
+  <div class="max-w-[37.5rem] max-h-[40.625rem] min-h-[40.625rem] w-full m-auto rounded rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.15)] flex py-6">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: 'w-full mx-14 flex flex-col gap-y-5' }) do |f| %>
       <%= render "/shared/errors", resource: resource %>
+
       <%= f.hidden_field :reset_password_token %>
-      <%= image_tag 'twitter_icon', class:'w-8 h-8 mx-auto mb-0.75rem' %>
+
+      <%= image_tag 'twitter_icon', class: 'w-8 h-8 mx-auto mb-0.75rem' %>
+
       <h2 class="heading-2 mb-0 font-extrabold text-center">Enter new password</h2>
       <p class="text-base text-dark-400 text-center max-w-[29.25rem]">Enter a new password for your account.</p>
 
@@ -15,13 +16,12 @@
       </div>
 
       <div class="field w-full">
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:'Repeat Password', class:'input' %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Repeat Password', class: 'input' %>
       </div>
 
-      <%= link_to 'Back', new_user_password_path, class: 'btn border border-dark-400 hover:bg-black hover:text-white mt-auto mb-0' %>
-        <%= f.submit "Next", class: 'btn btn-dark btn-lg' %>
+      <%= link_to 'Back', new_user_password_path, class: 'btn btn-outline hover:bg-black hover:text-white mt-auto mb-0' %>
+      
+      <%= f.submit "Next", class: 'btn btn-dark btn-lg' %>
     <% end %>
-    
-    
   </div>
 </div>

@@ -24,16 +24,13 @@
 
       <div>
         <h4 class="heading-4" >Date of birth</h4>
-        <p class="description-2">This will not be shown publicly. Confirm your own age, even if this account is for as business, a pet, or something else.</p>
+        <p class="description-2">This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</p>
       </div>
     
       <div class="w-full">
         <%= f.date_field :birth, autocomplete: "birth", placeholder: 'Date of birth', class: 'input' %>
       </div>
-
-      <div class="actions">
-        <%= f.submit "Next", class: 'btn btn-dark btn-lg' %>
-      </div>
+      <%= f.submit "Next", class: 'btn btn-dark btn-lg' %>
     <% end %>
   </div>
 </div>
