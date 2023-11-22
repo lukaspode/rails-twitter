@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: { case_sensitive: false }, length: { minimum: 2, maximum: 20}, presence: true
   validate :validate_age
   validates :bio, length: { maximum: 160}
-  validates :website, format: { with: /\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix }
+  validates :website, format: { with: /http(s)?:\/\/([a-z0-9-]+\.)?[a-z0-9-]+(\.[a-z]{2,})+/ }, allow_nil: true
 
   private
 
