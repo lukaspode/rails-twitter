@@ -7,15 +7,17 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
-  validates :name, :birth, presence: true
-  validates :username, uniqueness: { case_sensitive: false }, presence: true
+  validates :name, length: { minimum: 2 } , presence: true
+  validates :birth, presence: true
+  validates :username, uniqueness: { case_sensitive: false }, length: { minimum: 2, maximum: 20}, presence: true
   validate :validate_age
+  validates :bio, length: { maximum: 160}
+  validates :website, format: { with: /\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix }
 
   private
 
   def validate_age
     return unless birth.present? && (birth > 18.years.ago.to_date)
-
     errors.add(:birth, 'your age must be over 18')
   end
 end
