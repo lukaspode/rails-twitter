@@ -1,0 +1,32 @@
+<div class="grid grid-cols-12 w-full min-h-[56.25rem] m-0">
+  <div class="col-span-3 bg-gray-400">
+    <%# left sidebar %>
+  </div>
+
+  <div class="col-span-5">
+    <div class="">
+      <%# header %>
+    </div>
+    <div class="">
+      <%# portada %>
+    </div>
+    <div class="">
+      <%# profile info %>
+      <h3 class="heading-3"><%=@user.name%></h3>
+      <p class="description-1 text-left"><%=@user.username%></p>
+      <p><%=@user.birth%></p>
+    </div>
+    <div class="">
+      <%# profile navbar  %>
+    </div>
+    <div class="">
+      <%# tweets %>
+    </div>
+  </div>
+
+  <div class="col-span-4 bg-red-50">
+    <%# left sidebar %>
+  </div>
+
+
+</div>    
