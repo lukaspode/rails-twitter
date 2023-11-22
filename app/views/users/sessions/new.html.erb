@@ -1,8 +1,7 @@
 <div class="w-screen h-screen flex">
-
   <div class="max-w-[600px] max-h-[650px] w-full m-auto rounded rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.15)] flex py-16">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'max-w-[300px] w-full mx-auto flex flex-col gap-y-3' }) do |f| %>
-      <%= image_tag 'twitter_icon', class:'w-8 h-8 mx-auto mb-2' %>
+      <%= image_tag 'twitter_icon', class: 'w-8 h-8 mx-auto mb-2' %>
       <h2 class="text-center heading-2">Sign in to Twitter</h2>
       <div class="field w-full">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Phone, Email, or Username', class: 'input' %>
@@ -16,7 +15,7 @@
         <%= f.submit "Log in", class: 'btn btn-dark btn-lg' %>
       </div>
 
-      <%= link_to 'Forgot Password?', new_user_password_path, class: ' btn border border-dark-200 hover:bg-black hover:text-white' %>
+      <%= link_to 'Forgot Password?', new_user_password_path, class: ' btn btn-outline hover:bg-black hover:text-white' %>
       <div class="text-center">
         <span>Don't have and account?</span> <%= link_to 'Sign up', new_user_registration_path, class: 'text-[#41A2E3]' %>
       </div>
