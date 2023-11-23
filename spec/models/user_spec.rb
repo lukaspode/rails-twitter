@@ -12,8 +12,8 @@ RSpec.describe User, type: :model do
     let(:password) { 'validpassword' }
     let(:birth) { Date.new(1990, 11, 0o1) }
     let(:username) { 'lucasuru' }
-    let(:bio) {}
-    let(:website) {}
+    let(:bio) { '' }
+    let(:website) { '' }
 
     context 'email validations' do
       context 'when the email has an invalid format' do
