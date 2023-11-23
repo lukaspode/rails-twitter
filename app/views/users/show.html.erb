@@ -5,11 +5,16 @@
 
   <div class="col-span-5">
 
-    <div class="h-12">
+    <div class="">
       <%# header %>
-      <div>
-        <h2 class="heading-4"><%=@user.name%></h2>
-        <p class="text-sm">tweets</p>
+      <div class="flex flex-row">
+        <div class="p-1 m-3.5 mr-6">
+          <%= image_tag 'arrow_back_icon', class: 'w-4 h-3.5' %>
+        </div>
+        <div class="flex flex-col">
+          <h2 class="heading-4"><%=@user.name%></h2>
+          <p class="text-sm text-dark-500">tweets</p>
+        </div>
       </div>
     </div>
 
@@ -17,15 +22,28 @@
       <%# portada %>
     </div>
 
-    <div class="h-1/3">
+    <div class="h-[25.625rem]">
       <%# profile info %>
+      <div class="h-[12.5rem]">
+        <%# cover%>
+      </div>
       <h3 class="heading-3"><%=@user.name%></h3>
-      <p class="description-1 text-left"><%=@user.username%></p>
+      <p class="description-1 text-left">@<%=@user.username%></p>
       <p><%=@user.birth%></p>
     </div>
 
     <div class="h-12"">
       <%# tabbar  %>
+      <nav class="">
+        <div class="flex">
+          <ul class="">
+            <li>Tweets</li>
+            <li>Tweets & replies</li>
+            <li>Media</li>
+            <li>Likes</li>
+          </ul>
+        </div>
+      <nav/>
     </div>
 
     <div class="h-ful">
