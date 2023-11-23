@@ -9,10 +9,11 @@ class User < ApplicationRecord
 
   validates :name, length: { minimum: 2 }, presence: true
   validates :birth, presence: true
-  validates :username, uniqueness: { case_sensitive: false }, length: { minimum: 2, maximum: 20 }, presence: true
-  validate :validate_age
+  validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 2, maximum: 20 }
   validates :bio, length: { maximum: 160 }
   validates :website, format: { with: %r{http(s)?://([a-z0-9-]+\.)?[a-z0-9-]+(\.[a-z]{2,})+} }, allow_nil: true
+
+  validate :validate_age
 
   private
 
