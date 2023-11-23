@@ -46,7 +46,7 @@
   }
 
   .heading-2{
-    @apply text-2xl font-semibold text-black mb-2.5
+    @apply text-2xl font-semibold text-black
   }
 
   .heading-3{
@@ -54,7 +54,11 @@
   }
 
   .heading-4{
-    @apply font-semibold text-base my-2.5
+    @apply text-lg font-semibold text-black
+  }
+
+  .heading-5{
+    @apply text-base font-semibold
   }
 
   .input{
