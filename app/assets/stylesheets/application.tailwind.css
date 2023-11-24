@@ -74,7 +74,7 @@
   }
   
   .tabbar-link{
-    @apply py-4 w-full inline-block text-center text-dark-400 text-base font-bold
+    @apply cursor-pointer py-4 w-full inline-block text-center text-dark-400 xl:text-base text-sm font-bold hover:text-primary ease-in duration-100
   }
 
 }

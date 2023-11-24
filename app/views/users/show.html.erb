@@ -12,7 +12,7 @@
           <%= image_tag 'back_arrow_icon', class: '' %>
         </div>
         <div class="flex flex-col mt-1.5">
-          <h2 class="heading-4"><%=@user.name%></h2>
+          <h2 class="heading-4 font-bold"><%=@user.name%></h2>
           <p class="text-sm text-dark-500">tweets</p>
         </div>
       </div>
@@ -43,7 +43,7 @@
 
         <div class="my-2.5">
           <p><%=@user.email%></p>
-          <p>User bio should be here</p>
+          <p><%=@user.bio%></p>
         </div>
 
         <div class="flex flex-inline gap-2 text-dark-400">
@@ -53,7 +53,7 @@
           </div>
           <div class="flex gap-1 justify-center">
             <%= image_tag 'calendar_icon', class: 'w-5 h-5 px-[0.16rem] py-[0.1rem]' %>
-            <p>Joined <%=@user.confirmed_at.to_fs(:long)%></p>
+            <p>Joined <%=@user.confirmed_at.strftime("%B %Y")%></p>
           </div>
         </div>
       </div>
@@ -73,8 +73,12 @@
       <nav/>
     </div>
 
-    <div class="h-ful">
+    <div class="h-full">
       <%# tweets %>
+      <div class="">
+      </div>
+      <div class="">
+      </div>
     </div>
   </div>
 
