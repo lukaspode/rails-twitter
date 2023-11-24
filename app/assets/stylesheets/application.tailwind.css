@@ -18,15 +18,15 @@
   }
 
   .btn-dark {
-    @apply bg-black text-white hover:btn-primary;
+    @apply bg-dark-900 text-white hover:btn-primary;
   }
 
   .btn-sm {
-    @apply h-5;
+    @apply h-[1.875rem] w-24 ;
   }
 
   .btn-md {
-    @apply h-10;
+    @apply h-10 w-24 font-bold text-sm;
   }
 
   .btn-lg {
@@ -46,15 +46,15 @@
   }
 
   .heading-2{
-    @apply text-2xl font-semibold text-black
+    @apply text-2xl font-semibold text-dark-900
   }
 
   .heading-3{
-    @apply text-xl font-semibold leading-5 text-black
+    @apply text-xl font-semibold leading-5 text-dark-900
   }
 
   .heading-4{
-    @apply text-lg font-semibold text-black
+    @apply text-lg font-semibold text-dark-900
   }
 
   .heading-5{

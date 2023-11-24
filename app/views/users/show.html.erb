@@ -1,5 +1,5 @@
 <div class="grid grid-cols-12 w-full min-h-[56.25rem] m-0">
-  <div class="col-span-3 bg-gray-400">
+  <div class="col-span-3 px-2.5 bg-gray-400">
     <%# sidemenu %>
   </div>
 
@@ -18,18 +18,29 @@
       </div>
     </div>
 
-    <div class="">
-      <%# portada %>
-    </div>
-
     <div class="h-[25.625rem]">
-      <%# profile info %>
-      <div class="h-[12.5rem]">
+
+      <div class="h-[12.5rem] bg-dark-300">
         <%# cover%>
       </div>
-      <h3 class="heading-3"><%=@user.name%></h3>
-      <p class="description-1 text-left">@<%=@user.username%></p>
-      <p><%=@user.birth%></p>
+
+      <div class="flex justify-between w-full h-auto mb-1">
+        <div class="h-[8.688rem] w-[8.688rem] rounded-full bg-dark-200 mt-[-4.3rem] border-2 border-black ml-3">
+          <%# profile picture%>
+        </div>
+
+        <div class="mt-2.5 mr-[0.938rem]">
+          <button class="btn btn-md btn-secondary">Edit Profile</button>
+        </div>
+
+      </div>
+      
+      <div class="ml-[1.875rem] flex flex-col items-start">
+        <h3 class="heading-3"><%=@user.name%></h3>
+        <p class="description-1 text-dark-400">@<%=@user.username%></p>
+        <p><%=@user.birth%></p>
+      </div>
+
     </div>
 
     <div class="h-12"">
