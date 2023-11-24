@@ -4,122 +4,46 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'validations' do
-    subject { user.valid? }
+    subject(:user) { build(:user) }
 
-    let(:user) { build(:user, email:, password:, name:, birth:, username:) }
-    let(:name) { 'Lucas' }
-    let(:email) { 'someemail@example.com' }
-    let(:password) { 'validpassword' }
-    let(:birth) { Date.new(1990, 11, 0o1) }
-    let(:username) { 'lucasuru' }
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_length_of(:name).is_at_least(2) }
 
-    context 'email validations' do
-      context 'when the email has an invalid format' do
-        let(:email) { 'invalid.com' }
+    it { is_expected.to validate_presence_of(:username) }
+    it { is_expected.to validate_uniqueness_of(:username).case_insensitive }
+    it { is_expected.to validate_length_of(:username).is_at_least(2).is_at_most(20) }
 
-        it 'is invalid' do
-          expect(subject).to eq(false)
+    it { is_expected.to validate_presence_of(:email) }
+    it { is_expected.to validate_uniqueness_of(:email).case_insensitive }
+
+    it { is_expected.to validate_presence_of(:password) }
+    it { is_expected.to validate_length_of(:password).is_at_least(6) }
+
+    it { is_expected.to validate_length_of(:bio).is_at_most(160) }
+
+    it { is_expected.to validate_presence_of(:birth) }
+    it { is_expected.to allow_value(18.years.ago).for(:birth) }
+    it { is_expected.not_to allow_value(17.years.ago).for(:birth) }
+
+    it { is_expected.not_to allow_value('webexample.com').for(:website) }
+
+    context 'website validations' do
+      context 'when the website has valid format' do
+        context 'when it starts with http' do
+          let(:website) { Faker::Internet.url }
+
+          it 'is valid' do
+            expect(subject.valid?).to eq(true)
+          end
         end
-      end
 
-      context 'when the email has a valid format' do
-        let(:email) { Faker::Internet.email }
+        context 'when it starts with https' do
+          let(:website) { Faker::Internet.url(scheme: 'https') }
 
-        it 'is valid' do
-          expect(subject).to eq(true)
+          it 'is valid' do
+            expect(subject.valid?).to eq(true)
+          end
         end
-      end
-
-      context 'when the email is not unique' do
-        before { create(:user, email:, password:, name:, birth:) }
-
-        it 'is invalid' do
-          expect(subject).to eq(false)
-        end
-      end
-
-      context 'when the email is unique' do
-        before { create(:user, email: 'otheremail@example.com') }
-
-        it 'is valid' do
-          expect(subject).to eq(true)
-        end
-      end
-    end
-
-    context 'password validations' do
-      context 'when the password has less than 6 characters' do
-        let(:password) { 'four' }
-
-        it 'is invalid' do
-          expect(subject).to eq(false)
-        end
-      end
-
-      context 'when the password has 6 or more characters' do
-        let(:password) { Faker::Internet.password(min_length: 6) }
-
-        it 'is valid' do
-          expect(subject).to eq(true)
-        end
-      end
-    end
-
-    context 'birth validations' do
-      context 'when the age of the user is under 18' do
-        let(:birth) { Faker::Date.birthday(min_age: 0, max_age: 17) }
-
-        it 'is invalid' do
-          expect(subject).to eq(false)
-        end
-      end
-
-      context 'when the age of the user is over 18' do
-        let(:birth) { Faker::Date.birthday(min_age: 18) }
-
-        it 'is valid' do
-          expect(subject).to eq(true)
-        end
-      end
-
-      context 'when birth field is empty' do
-        let(:birth) { '' }
-        it 'is not valid' do
-          expect(subject).to eq(false)
-        end
-      end
-    end
-
-    context 'username validations' do
-      context 'when te username is not unique ' do
-        before { create(:user, username:) }
-        it 'is notinvalid' do
-          expect(subject).to eq(false)
-        end
-      end
-
-      context 'when the username is unique ' do
-        before { create(:user, username: Faker::Internet.username) }
-        it 'is valid' do
-          expect(subject).to eq(true)
-        end
-      end
-
-      context 'when the username field is empty' do
-        let(:username) { '' }
-        it 'is not valid' do
-          expect(subject).to eq(false)
-        end
-      end
-    end
-
-    context 'name valdiations' do
-      context 'when the name field is empty' do
-        let(:name) { '' }
-        it 'is valid' do
-          expect(subject).to eq(false)
-        end
-        # it { should validate_presence_of(:name) }
       end
     end
   end

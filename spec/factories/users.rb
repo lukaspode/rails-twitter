@@ -9,5 +9,7 @@ FactoryBot.define do
     sequence :username do |n|
       Faker::Internet.username.to_s + n.to_s
     end
+    bio { Faker::Lorem.paragraph_by_chars(number: Faker::Number.between(from: 1, to: 160)) }
+    website { Faker::Internet.url }
   end
 end
