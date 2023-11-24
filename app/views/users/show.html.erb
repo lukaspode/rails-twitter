@@ -9,9 +9,9 @@
       <%# header %>
       <div class="flex flex-row">
         <div class="p-1 m-3.5 mr-6">
-          <%= image_tag 'arrow_back_icon', class: 'w-4 h-3.5' %>
+          <%= image_tag 'back_arrow_icon', class: '' %>
         </div>
-        <div class="flex flex-col">
+        <div class="flex flex-col mt-1.5">
           <h2 class="heading-4"><%=@user.name%></h2>
           <p class="text-sm text-dark-500">tweets</p>
         </div>
@@ -24,36 +24,52 @@
         <%# cover%>
       </div>
 
-      <div class="flex justify-between w-full h-auto mb-1">
-        <div class="h-[8.688rem] w-[8.688rem] rounded-full bg-dark-200 mt-[-4.3rem] border-2 border-black ml-3">
-          <%# profile picture%>
+      <div class="mx-3.5">
+        <div class="flex justify-between w-full h-auto mb-1">
+          <div class="h-[8.688rem] w-[8.688rem] rounded-full bg-dark-200 mt-[-4.3rem] border-4 border-dark-900">
+            <%# profile picture%>
+          </div>
+
+          <div class="mt-2.5">
+            <button class="btn btn-md btn-secondary">Edit Profile</button>
+          </div>
+
+        </div>
+        
+        <div class="flex flex-col items-start">
+          <h3 class="heading-3"><%=@user.name%></h3>
+          <p class="description-1 text-dark-400">@<%=@user.username%></p>
         </div>
 
-        <div class="mt-2.5 mr-[0.938rem]">
-          <button class="btn btn-md btn-secondary">Edit Profile</button>
+        <div class="my-2.5">
+          <p><%=@user.email%></p>
+          <p>User bio should be here</p>
         </div>
 
+        <div class="flex flex-inline gap-2 text-dark-400">
+          <div class="flex gap-1 justify-center">
+            <%= image_tag 'location_icon', class: 'w-5 h-5 px-[0.16rem] py-[0.1rem]' %>
+            <p>Montevideo</p>
+          </div>
+          <div class="flex gap-1 justify-center">
+            <%= image_tag 'calendar_icon', class: 'w-5 h-5 px-[0.16rem] py-[0.1rem]' %>
+            <p>Joined <%=@user.confirmed_at.to_fs(:long)%></p>
+          </div>
+        </div>
       </div>
       
-      <div class="ml-[1.875rem] flex flex-col items-start">
-        <h3 class="heading-3"><%=@user.name%></h3>
-        <p class="description-1 text-dark-400">@<%=@user.username%></p>
-        <p><%=@user.birth%></p>
-      </div>
 
     </div>
 
-    <div class="h-12"">
+    <div class="h-14 border-b-2 border-dark-200"">
       <%# tabbar  %>
-      <nav class="">
-        <div class="flex">
-          <ul class="">
-            <li>Tweets</li>
-            <li>Tweets & replies</li>
-            <li>Media</li>
-            <li>Likes</li>
-          </ul>
-        </div>
+      <nav class="w-full">
+        <ul class="felex inline-flex w-full">
+          <li class="tabbar-link">Tweets</li>
+          <li class="tabbar-link">Tweets & replies</li>
+          <li class="tabbar-link">Media</li>
+          <li class="tabbar-link">Likes</li>
+        </ul>
       <nav/>
     </div>
 

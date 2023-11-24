@@ -72,6 +72,9 @@
   .description-2{
     @apply text-sm text-dark-300
   }
+  
+  .tabbar-link{
+    @apply py-4 w-full inline-block text-center text-dark-400 text-base font-bold
+  }
+
 }
-
-
