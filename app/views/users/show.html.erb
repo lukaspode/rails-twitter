@@ -6,13 +6,12 @@
   <div class="col-span-5">
 
     <div class="">
-      <%# header %>
       <div class="flex flex-row">
         <div class="p-1 m-3.5 mr-6">
           <%= image_tag 'back_arrow_icon', class: '' %>
         </div>
         <div class="flex flex-col mt-1.5">
-          <h2 class="heading-4 font-bold"><%=@user.name%></h2>
+          <h2 class="heading-4 font-bold"><%= @user.name %></h2>
           <p class="text-sm text-dark-500">tweets</p>
         </div>
       </div>
@@ -20,13 +19,11 @@
 
     <div class="h-min">
       <div class="h-[12.5rem] bg-dark-300">
-        <%# cover%>
       </div>
 
       <div class="mx-3.5">
         <div class="flex justify-between w-full h-auto mb-1">
           <div class="profile-picture">
-            <%# profile picture%>
           </div>
 
           <div class="mt-2.5">
@@ -37,12 +34,12 @@
         
         <div class="flex flex-col items-start mb-2.5">
           <h3 class="heading-3"><%=@user.name%></h3>
-          <p class="text-base text-dark-400">@<%=@user.username%></p>
+          <p class="text-base text-dark-400">@<%= @user.username %></p>
         </div>
 
         <div class="my-2.5 text-dark-900">
-          <p><%=@user.email%></p>
-          <p><%=@user.bio%></p>
+          <p><%= @user.email %></p>
+          <p><%= @user.bio %></p>
         </div>
 
         <div class="flex flex-inline gap-2 text-dark-400 mb-2.5 xl:text-base text-sm">
@@ -52,7 +49,7 @@
           </div>
           <div class="flex gap-1 justify-center">
             <%= image_tag 'calendar_icon', class: 'px-[0.16rem] py-[0.1rem]' %>
-            <p>Joined <%=@user.confirmed_at.strftime("%B %Y")%></p>
+            <p>Joined <%= @user.confirmed_at.strftime("%B %Y") %></p>
           </div>
         </div>
         
@@ -73,7 +70,6 @@
     </div>
 
     <div class="h-14 border-b-2 border-dark-200"">
-      <%# tabbar  %>
       <nav class="w-full">
         <ul class="felex inline-flex w-full">
           <li class="tabbar-link">Tweets</li>
