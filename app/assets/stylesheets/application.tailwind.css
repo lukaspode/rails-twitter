@@ -66,7 +66,7 @@
   }
 
   .description-1{
-    @apply text-base text-dark-300 text-center max-w-[29.25rem]
+    @apply text-base text-dark-300 max-w-[29.25rem]
   }
 
   .description-2{
@@ -75,6 +75,10 @@
   
   .tabbar-link{
     @apply cursor-pointer py-4 w-full inline-block text-center text-dark-400 xl:text-base text-sm font-bold hover:text-primary ease-in duration-100
+  }
+
+  .profile-picture{
+    @apply h-[8.688rem] w-[8.688rem] rounded-full bg-dark-200 mt-[-4.3rem] border-4 border-dark-900
   }
 
 }
