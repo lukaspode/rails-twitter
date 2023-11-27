@@ -1,0 +1,97 @@
+<div class="grid grid-cols-12 w-full min-h-[56.25rem] m-0">
+  <div class="col-span-3 px-2.5 bg-gray-400">
+    <%# sidemenu %>
+  </div>
+
+  <div class="col-span-5">
+
+    <div class="">
+      <div class="flex flex-row">
+        <div class="p-1 m-3.5 mr-6">
+          <%= image_tag 'back_arrow_icon', class: '' %>
+        </div>
+        <div class="flex flex-col mt-1.5">
+          <h2 class="heading-4 font-bold"><%= @user.name %></h2>
+          <p class="text-sm text-dark-500">tweets</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-min">
+      <div class="h-[12.5rem] bg-dark-300">
+      </div>
+
+      <div class="mx-3.5">
+        <div class="flex justify-between w-full h-auto mb-1">
+          <div class="profile-picture">
+          </div>
+
+          <div class="mt-2.5">
+            <button class="btn btn-md btn-secondary">Edit Profile</button>
+          </div>
+
+        </div>
+        
+        <div class="flex flex-col items-start mb-2.5">
+          <h3 class="heading-3"><%=@user.name%></h3>
+          <p class="text-base text-dark-400">@<%= @user.username %></p>
+        </div>
+
+        <div class="my-2.5 text-dark-900">
+          <p><%= @user.email %></p>
+          <p><%= @user.bio %></p>
+        </div>
+
+        <div class="flex flex-inline gap-2 text-dark-400 mb-2.5 xl:text-base text-sm">
+          <div class="flex gap-1 justify-center">
+            <%= image_tag 'location_icon', class: 'px-[0.16rem] py-[0.1rem]' %>
+            <p>Montevideo</p>
+          </div>
+          <div class="flex gap-1 justify-center">
+            <%= image_tag 'calendar_icon', class: 'px-[0.16rem] py-[0.1rem]' %>
+            <p>Joined <%= @user.confirmed_at.strftime("%B %Y") %></p>
+          </div>
+        </div>
+        
+        <div class="flex mb-2.5 xl:text-base text-sm">
+          <div class="flex flex-inline items-start gap-1 mr-5">
+            <p class="font-bold text-dark-900">231</p>
+            <p class="font-medium text-dark-400">Following</p>
+          </div>
+
+          <div class="flex flex-inline items-start gap-1">
+            <p class="font-bold text-dark-900">146</p>
+            <p class="font-medium text-dark-400">Followers</p>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+
+    <div class="h-14 border-b-2 border-dark-200"">
+      <nav class="w-full">
+        <ul class="felex inline-flex w-full">
+          <li class="tabbar-link">Tweets</li>
+          <li class="tabbar-link">Tweets & replies</li>
+          <li class="tabbar-link">Media</li>
+          <li class="tabbar-link">Likes</li>
+        </ul>
+      <nav/>
+    </div>
+
+    <div class="">
+      <%# tweets %>
+      <div class="">
+      </div>
+      <div class="">
+      </div>
+    </div>
+  </div>
+
+  <div class="col-span-4 bg-red-50">
+    <%# sidecolumn %>
+  </div>
+
+
+</div>    

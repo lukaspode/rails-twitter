@@ -18,15 +18,15 @@
   }
 
   .btn-dark {
-    @apply bg-black text-white hover:btn-primary;
+    @apply bg-dark-900 text-white hover:btn-primary;
   }
 
   .btn-sm {
-    @apply h-5;
+    @apply h-[1.875rem] w-24 ;
   }
 
   .btn-md {
-    @apply h-10;
+    @apply h-10 w-24 font-bold text-sm;
   }
 
   .btn-lg {
@@ -46,15 +46,19 @@
   }
 
   .heading-2{
-    @apply text-2xl font-semibold text-black mb-2.5
+    @apply text-2xl font-semibold text-dark-900
   }
 
   .heading-3{
-    @apply text-xl font-semibold leading-5 text-black m-6
+    @apply text-xl font-semibold leading-5 text-dark-900
   }
 
   .heading-4{
-    @apply font-semibold text-base my-2.5
+    @apply text-lg font-semibold text-dark-900
+  }
+
+  .heading-5{
+    @apply text-base font-semibold
   }
 
   .input{
@@ -62,12 +66,19 @@
   }
 
   .description-1{
-    @apply text-base text-dark-300 text-center max-w-[29.25rem]
+    @apply text-base text-dark-300 max-w-[29.25rem]
   }
 
   .description-2{
     @apply text-sm text-dark-300
   }
+  
+  .tabbar-link{
+    @apply cursor-pointer py-4 w-full inline-block text-center text-dark-400 xl:text-base text-sm font-bold hover:text-primary ease-in duration-100
+  }
+
+  .profile-picture{
+    @apply h-[8.688rem] w-[8.688rem] rounded-full bg-dark-200 mt-[-4.3rem] border-4 border-dark-900
+  }
+
 }
-
-
