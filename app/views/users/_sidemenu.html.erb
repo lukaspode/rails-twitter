@@ -31,12 +31,19 @@
       </div>
     </div>
 
-    <%= link_to 'Tweet', class: 'btn btn-lg btn-primary' %>
+    <div class="py-4">
+      <%= link_to 'Tweet', class: 'btn btn-lg btn-primary' %>
+    </div>
+
   </div>
 
   <%# PROFILE %>
-  <div>
-    <p>Perfil</p>
+  <div class="flex">
+    <div class="rounded-full bg-slate-500 w-8 h-8"></div>
+    <div>
+      <p><%=@user.name%></p>
+      <p>@<%=@user.username%></p>
+    </div>
   </div>
 
 </div>
