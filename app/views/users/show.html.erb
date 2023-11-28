@@ -25,8 +25,9 @@
         <div class="flex justify-between w-full h-auto mb-1">
           <div class="profile-picture">
           </div>
-
-          <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-md btn-secondary w-28 mt-2.5', data: { turbo_frame: 'modal' }%>
+          <%if current_user?(@user)%>
+            <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-md btn-secondary w-28 mt-2.5', data: { turbo_frame: 'modal' }%>
+          <%end%>
         </div>
         
         <div class="flex flex-col items-start mb-2.5">
