@@ -1,19 +1,15 @@
 <div class="flex flex-row justify-center w-full min-h-[56.25rem] m-0">
-  <div class="flex-col w-[17.2rem] px-2.5 bg-gray-400 px-2">
-    <%# sidemenu %>
-  </div>
+  <%= render 'sidemenu'%>
 
   <div class="flex-col min-w-[37.5rem]">
 
-    <div class="">
-      <div class="flex flex-row">
-        <div class="p-1 m-3.5 mr-6">
-          <%= image_tag 'back_arrow_icon', class: '' %>
-        </div>
-        <div class="flex flex-col mt-1.5">
-          <h2 class="heading-4 font-bold"><%= @user.name %></h2>
-          <p class="text-sm text-dark-500">tweets</p>
-        </div>
+    <div class="flex flex-row">
+      <div class="p-1 m-3.5 mr-6">
+        <%= image_tag 'back_arrow_icon', class: '' %>
+      </div>
+      <div class="flex flex-col mt-1.5">
+        <h2 class="heading-4 font-bold"><%= @user.name %></h2>
+        <p class="text-sm text-dark-500">tweets</p>
       </div>
     </div>
 

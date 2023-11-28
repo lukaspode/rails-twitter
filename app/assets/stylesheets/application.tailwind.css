@@ -81,4 +81,12 @@
     @apply h-[8.688rem] w-[8.688rem] rounded-full bg-dark-200 mt-[-4.3rem] border-4 border-dark-900
   }
 
+  .sidemenu-title{
+    @apply text-lg font-boldd bg-dark-900
+  }
+
+  .sidemenu-icon{
+    
+  }
+
 }
