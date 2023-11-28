@@ -62,7 +62,7 @@
   }
 
   .input{
-    @apply w-full py-5 px-6 text-xs rounded-md border border-[#D9D9D9]
+    @apply w-full py-5 px-6 text-xs rounded-md border border-[#D9D9D9] placeholder-[##939393]
   }
 
   .description-1{

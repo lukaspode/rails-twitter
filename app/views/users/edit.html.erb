@@ -1,37 +1,48 @@
 <%= turbo_frame_tag 'modal' do%>
-  <div class="absolute flex bg-dark-200/80 w-screen h-screen">
-    <div class='w-2/5 h-min m-auto max-w-[37.5rem] max-h-[46.875rem] bg-white'>
-      <h1>Edit Profile</h1>
+  <div class="w-screen h-screen absolute flex bg-dark-200/80">
+    <div class='w-[37.5rem] h-[55.5rem] m-auto bg-white rounded-3xl shadow-lg'>
+
+      <div class="flex flex-row w-full items-center">
+        <div class="flex-col flex-none m-6">
+          <%= image_tag 'close_icon'%>
+        </div>
+
+        <div class="flex-col m-6">
+          <h2 class="heading-3">Edit Profile</h2>
+        </div>
+        
+        <div class="flex-col flex-auto m-6">
+          <%=link_to 'Save', class: 'btn'%>
+        </div>
+      </div>
 
       <div class="h-[12.5rem] bg-dark-300">
       </div>
 
-      <div class="profile-picture">
+      <div class="profile-picture mx-3.5">
       </div>
 
-      <%= form_with(model: @user, html: { class: 'w-full mx-14 flex flex-col gap-y-5' }) do |f| %>
-
-        <h2 class="heading-2 mb-2.5">Create your account</h2>
+      <%= form_with(model: @user, html: { class: 'max-w-[30.2rem] w-full h-full mx-14 mt-9 flex flex-col gap-y-5' }) do |f| %>
 
         <div class="w-full">
           <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Name', class: 'input' %>
         </div>
 
         <div class="w-full">
-          <%= f.text_field :bio, autocomplete: "bio", placeholder: 'Bio', class: 'input' %>
+          <%= f.text_area :bio, autocomplete: "bio", placeholder: 'Bio', row: 2 ,class: 'input  h-[7.5rem]' %>
         </div>
       
         <div class="w-full">
           <%= f.text_field :location, autocomplete: "location", placeholder: 'Location', class: 'input' %>
         </div>
 
-        <h4 class="heading-5 my-2.5" >Date of birth</h4>
+        <h4 class="heading-5" >Date of birth</h4>
       
         <div class="w-full">
           <%= f.date_field :birth, autocomplete: "birth", placeholder: 'Date of birth', class: 'input' %>
         </div>
 
-        <%= f.submit "Next", class: 'btn btn-dark btn-lg' %>
+        <%# <%= f.submit "Save", class: 'btn btn-dark btn-lg' %>
       <% end %>
     </div>
   </div>
