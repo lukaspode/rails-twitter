@@ -1,13 +1,11 @@
-<div class="flex flex-row justify-center w-full min-h-[56.25rem]">
+<div class="flex flex-row justify-center w-full h-screen">
   
   <%= render 'sidemenu', object: @user%>
 
-  <div class="flex-col min-w-[37.5rem]">
+  <div class="inline-flex flex-col min-w-[37.5rem]">
 
     <div class="flex flex-row">
-      <div class="p-1 m-3.5 mr-6">
-        <%= image_tag 'back_arrow_icon', class: '' %>
-      </div>
+      <%= image_tag 'back_arrow_icon', class: 'p-1 m-3.5 mr-6' %>
       <div class="flex flex-col mt-1.5">
         <h2 class="heading-4 font-bold"><%= @user.name %></h2>
         <p class="text-sm text-dark-500">tweets</p>
@@ -84,7 +82,7 @@
     </div>
   </div>
 
-  <div class="flex-col w-[22rem] ml-7 bg-red-50">
+  <div class="flex-col shrink-0 w-[22rem] ml-7 bg-red-50">
     <%# sidecolumn %>
   </div>
 
