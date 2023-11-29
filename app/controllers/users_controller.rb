@@ -6,13 +6,13 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = current_user
     if @user.update(user_params)
-      redirect_to @user
+      redirect_to user_path(@user)
     else
       render :edit, status: :unprocessable_entity
     end
