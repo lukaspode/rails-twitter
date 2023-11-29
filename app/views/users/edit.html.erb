@@ -4,16 +4,17 @@
 
       <div class="flex flex-row w-full items-center">
         <div class="flex-col flex-none m-6">
-          <%= image_tag 'close_icon'%>
+          <%= link_to image_tag('close_icon'), '#', data: {
+          turbo_frame: "_top",
+          controler: "modals",
+          action: "modals#close"
+        }%>
+        
         </div>
 
-        <div class="flex-col m-6">
-          <h2 class="heading-3">Edit Profile</h2>
-        </div>
+        <h2 class="heading-3 m-6">Edit Profile</h2>
         
-        <div class="flex-col flex-auto m-6">
-          <%=link_to 'Save', class: 'btn'%>
-        </div>
+        <%=button_to 'Save', @user ,class: 'btn btn-dark m-6', method: :post%> 
       </div>
 
       <div class="h-[12.5rem] bg-dark-300">
@@ -42,7 +43,7 @@
           <%= f.date_field :birth, autocomplete: "birth", placeholder: 'Date of birth', class: 'input' %>
         </div>
 
-        <%# <%= f.submit "Save", class: 'btn btn-dark btn-lg' %>
+        <%= f.submit "Save", class: 'btn btn-dark btn-lg', data: {turbo_frame: "_top"} %>
       <% end %>
     </div>
   </div>
