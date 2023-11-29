@@ -82,7 +82,7 @@
   }
 
   .sidemenu-item{
-    @apply grid grid-cols-2 gap-5 py-[0.9rem] pl-[0.6rem] pr-36 items-center;
+    @apply flex gap-5 py-[0.9rem] pl-[0.6rem] pr-36 items-center;
   }
 
   .sidemenu-title{
@@ -90,6 +90,6 @@
   }
 
   .sidemenu-icon{
-    @apply p-1;
+    @apply w-[1.875rem] h-[1.875rem] p-1;
   }
 }

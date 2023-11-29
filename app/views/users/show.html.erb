@@ -2,17 +2,17 @@
   
   <%= render 'sidemenu', object: @user%>
 
-  <div class="inline-flex flex-col min-w-[37.5rem]">
+  <div class="inline-flex flex-col items-start min-w-[37.5rem]">
 
-    <div class="flex flex-row">
+    <div class="flex flex-row w-full">
       <%= image_tag 'back_arrow_icon', class: 'p-1 m-3.5 mr-6' %>
       <div class="flex flex-col mt-1.5">
         <h2 class="heading-4 font-bold"><%= @user.name %></h2>
-        <p class="text-sm text-dark-500">tweets</p>
+        <p class="text-sm text-dark-400">tweets</p>
       </div>
     </div>
 
-    <div class="h-min">
+    <div class="h-min w-full">
       <div class="h-[12.5rem] bg-dark-300">
       </div>
 
@@ -35,7 +35,7 @@
           <p><%= @user.bio %></p>
         </div>
 
-        <div class="flex flex-inline gap-2 text-dark-400 mb-2.5 xl:text-base text-sm">
+        <div class="flex flex-inline items-start gap-2 text-dark-400 mb-2.5 xl:text-base text-sm">
           <div class="flex gap-1 justify-center">
             <%= image_tag 'location_icon', class: 'px-[0.16rem] py-[0.1rem]' %>
             <p>Montevideo</p>
@@ -62,7 +62,7 @@
 
     </div>
 
-    <div class="h-14 border-b-2 border-dark-200">
+    <div class="h-14 border-b-2 border-dark-200 w-full">
       <nav class="w-full">
         <ul class="felex inline-flex w-full">
           <li class="tabbar-link">Tweets</li>
