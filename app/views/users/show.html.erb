@@ -2,11 +2,13 @@
   
   <%= render 'sidemenu', object: @user%>
 
-  <div class="inline-flex flex-col items-start min-w-[37.5rem]">
+  <div class="inline-flex flex-col items-start sm:w-[37.5rem] w-full">
 
-    <div class="flex flex-row w-full">
-      <%= image_tag 'back_arrow_icon', class: 'p-1 m-3.5 mr-6' %>
-      <div class="flex flex-col mt-1.5">
+    <div class="flex flex-row w-full ">
+      <div class="">
+        <%= image_tag 'back_arrow_icon', class: 'p-1 m-3.5 mr-6 inline-block' %>
+      </div>
+      <div class=" flex-col mt-1.5 inline-block">
         <h2 class="heading-4 font-bold"><%= @user.name %></h2>
         <p class="text-sm text-dark-400">tweets</p>
       </div>
@@ -20,7 +22,7 @@
         <div class="flex justify-between w-full h-auto mb-1">
           <%= image_tag 'profile_picture', class: 'profile-picture'%>
           <%if current_user?(@user)%>
-            <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-md btn-secondary w-28 mt-2.5', data: { turbo_frame: 'modal' }%>
+            <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-md btn-secondary sm:w-28 w-24 mt-2.5', data: { turbo_frame: 'modal' }%>
           <%end%>
         </div>
         
@@ -81,7 +83,7 @@
     </div>
   </div>
 
-  <div class="flex-col shrink-0 w-[22rem] ml-7 bg-red-50">
+  <div class="flex-col lg:block hidden shrink-0 w-[22rem] ml-7 bg-red-50">
     <%# sidecolumn %>
   </div>
 
