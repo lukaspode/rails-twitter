@@ -9,12 +9,9 @@
             controler: "modals",
             action: "modals#close"
         }%>
-        
         </div>
 
-        <h2 class="heading-3 m-6">Edit Profile</h2>
-        <input type="submit" class="btn btn-dark flex justify-center items-center my-6 mr-6 ml-auto w-[5.375rem] h-[1.875rem] text-sm" form="<%= dom_id(@user) %>" value="Save"></input>
-        <%# <%= tag.submit 'Save', type: :submit, form: dom_id(@user), class: 'btn btn-dark flex justify-center items-center my-6 mr-6 ml-auto w-[5.375rem] h-[1.875rem] text-sm'%> 
+        <h2 class="heading-3 m-6">Edit Profile</h2> 
       </div>
 
       <div class="h-[12.5rem] bg-dark-300">
@@ -43,7 +40,7 @@
           <%= f.date_field :birth, autocomplete: "birth", placeholder: 'Date of birth', class: 'input' %>
         </div>
 
-        <%#= f.submit "Save", class: 'btn btn-dark btn-lg', data: {turbo_frame: "_top"} %>
+        <%= f.submit "Save", class: 'btn btn-dark btn-lg', data: {turbo_frame: "_top"} %>
       <% end %>
     </div>
   </div>
