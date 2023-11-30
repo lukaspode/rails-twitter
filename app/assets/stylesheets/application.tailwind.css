@@ -78,7 +78,7 @@
   }
 
   .profile-picture{
-    @apply h-[8.688rem] w-[8.688rem] rounded-full bg-dark-200 mt-[-4.3rem] border-4 border-dark-900 shrink-0;
+    @apply h-[8.688rem] w-[8.688rem] rounded-full mt-[-4.3rem] border-4 border-dark-900 shrink-0;
   }
 
   .sidemenu-item{
@@ -86,7 +86,7 @@
   }
 
   .sidemenu-title{
-    @apply xl:text-lg text-base font-bold text-dark-900;
+    @apply xl:block text-lg hidden font-bold text-dark-900;
   }
 
   .sidemenu-icon{

@@ -18,8 +18,7 @@
 
       <div class="mx-3.5">
         <div class="flex justify-between w-full h-auto mb-1">
-          <div class="profile-picture">
-          </div>
+          <%= image_tag 'profile_picture', class: 'profile-picture'%>
           <%if current_user?(@user)%>
             <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-md btn-secondary w-28 mt-2.5', data: { turbo_frame: 'modal' }%>
           <%end%>

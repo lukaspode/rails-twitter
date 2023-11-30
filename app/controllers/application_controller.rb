@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  private
+  helper_method :current_user?
 
   def current_user?(user)
     user == current_user
   end
-
-  helper_method :current_user?
 end

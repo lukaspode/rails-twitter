@@ -1,4 +1,4 @@
-<div class="flex flex-col shrink-0 w-[17.2rem] h-[56.25rem] gap-[13.688rem] px-2.5">
+<div class="flex flex-col shrink-0 xl:w-[17.2rem] xl:h-[56.25rem] w-[5.5rem] gap-[13.688rem] px-2.5">
   <%# TOP %>
   <div class="flex flex-col w-[15.938rem] h-[38.25rem]">
     <div class="flex flex-row p-3">
@@ -25,6 +25,7 @@
         <%= image_tag 'profile_icon', class: 'sidemenu-icon'%>
         <h2 class='sidemenu-title'>Profile</h2>
       </div>
+
       <div class="sidemenu-item">
         <%= image_tag 'more_icon', class: 'sidemenu-icon'%>
         <h2 class='sidemenu-title'>More</h2>
@@ -32,19 +33,19 @@
     </div>
 
     <div class="flex flex-col gap-3 items-start py-4">
-      <%= button_to 'Tweet', '#' ,class: 'btn btn-lg btn-primary px-24' %>
+      <%= button_to 'Tweet', '#', class: 'btn btn-lg btn-primary px-24 xl:block hidden' %>
+      <%= image_tag 'add_tweet_icon', class: 'block xl:hidden w-12 h-12'%>
     </div>
-
   </div>
 
   <%# PROFILE %>
   <div class="flex items-center">
-    <div class="rounded-full bg-slate-500 w-8 h-8 mr-3"></div>
-    <div class="mt-2 mb-3">
+    <%= image_tag 'profile_picture', class: 'rounded-full w-10 h-10 mr-3' %>
+    <div class="hidden xl:block">
       <h3 class="heading-5"><%= @user.name %></h3>
       <p class="text-base font-medium text-dark-400">@<%= @user.username %></p>
     </div>
-    <%= image_tag 'seemore_icon', class: 'ml-auto px-3'%>
+    <%= image_tag 'seemore_icon', class: 'ml-auto px-3 hidden xl:block' %>
   </div>
 
 </div>
