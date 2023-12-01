@@ -5,32 +5,34 @@
       <%= link_to image_tag('twitter_icon'), '#'%>
     </div>
 
-    <div class="flex flex-col items-start">
-      <div class="sidemenu-item">
-        <%= image_tag 'home_icon', class: 'sidemenu-icon'%>
-        <h2 class='sidemenu-title'>Home</h2>
-      </div>
+    <nav class="flex flex-col items-start">
+      <ul class="w-full">
+        <li class="sidemenu-item">
+          <%= image_tag 'home_icon', class: 'sidemenu-icon'%>
+          <h2 class='sidemenu-title'>Home</h2>
+        </li>
 
-      <div class="sidemenu-item">
-        <%= image_tag 'notification_icon', class: 'sidemenu-icon'%>
-        <p class='sidemenu-title'>Notifications</p>
-      </div>
+        <li class="sidemenu-item">
+          <%= image_tag 'notification_icon', class: 'sidemenu-icon'%>
+          <p class='sidemenu-title'>Notifications</p>
+        </li>
 
-      <div class="sidemenu-item">
-        <%= image_tag 'message_icon', class: 'sidemenu-icon'%>
-        <h2 class='sidemenu-title'>Messages</h2>
-      </div>
+        <li class="sidemenu-item">
+          <%= image_tag 'message_icon', class: 'sidemenu-icon'%>
+          <h2 class='sidemenu-title'>Messages</h2>
+        </li>
 
-      <div class="sidemenu-item">
-        <%= image_tag 'profile_icon', class: 'sidemenu-icon'%>
-        <h2 class='sidemenu-title'>Profile</h2>
-      </div>
+        <li class="sidemenu-item">
+          <%= image_tag 'profile_icon', class: 'sidemenu-icon'%>
+          <h2 class='sidemenu-title'>Profile</h2>
+        </li>
 
-      <div class="sidemenu-item">
-        <%= image_tag 'more_icon', class: 'sidemenu-icon'%>
-        <h2 class='sidemenu-title'>More</h2>
-      </div>
-    </div>
+        <li class="sidemenu-item">
+          <%= image_tag 'more_icon', class: 'sidemenu-icon'%>
+          <h2 class='sidemenu-title'>More</h2>
+        </li>
+      </ul>
+    </nav>
 
     <div class="flex flex-col gap-3 items-start py-4">
       <%= button_to 'Tweet', '#', class: 'btn btn-lg btn-primary px-24 xl:block hidden' %>
