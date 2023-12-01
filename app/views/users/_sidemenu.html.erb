@@ -41,13 +41,14 @@
   </div>
 
   <%# PROFILE %>
-  <div class="flex items-center p-1 hover:bg-slate-200 hover:rounded-full ease-in duration-100">
+  <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>
+    <div class="flex items-center p-1 hover:bg-slate-200 hover:rounded-full ease-in duration-100">
     <%= image_tag 'profile_picture', class: 'rounded-full w-10 h-10 mr-3' %>
     <div class="hidden xl:block">
       <h3 class="heading-5"><%= @user.name %></h3>
       <p class="text-base font-medium text-dark-400">@<%= @user.username %></p>
     </div>
     <%= image_tag 'seemore_icon', class: 'ml-auto px-3 hidden xl:block' %>
-  </div>
-
+    </div>
+  <% end %>
 </div>
