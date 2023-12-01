@@ -1,11 +1,11 @@
 <div class="flex flex-col shrink-0 xl:w-[17.2rem] h-[56.25rem] w-[5.5rem] gap-[13.688rem] px-2.5">
   <%# TOP %>
-  <div class="flex flex-col w-[15.938rem] h-[38.25rem]">
+  <div class="flex flex-col w-full h-[38.25rem]">
     <div class="flex flex-row p-3 sm:block hidden">
       <%= link_to image_tag('twitter_icon'), '#'%>
     </div>
 
-    <nav class="flex flex-col items-start">
+    <nav class="flex flex-col items-start w-full">
       <ul class="w-full">
         <li class="sidemenu-item">
           <%= image_tag 'home_icon', class: 'sidemenu-icon'%>
@@ -41,7 +41,7 @@
   </div>
 
   <%# PROFILE %>
-  <div class="flex items-center">
+  <div class="flex items-center p-1 hover:bg-slate-200 hover:rounded-full ease-in duration-100">
     <%= image_tag 'profile_picture', class: 'rounded-full w-10 h-10 mr-3' %>
     <div class="hidden xl:block">
       <h3 class="heading-5"><%= @user.name %></h3>

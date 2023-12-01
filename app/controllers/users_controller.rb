@@ -21,8 +21,8 @@ class UsersController < ApplicationController
 
   private
 
-  def current_user?(user)
-    user == current_user
+  def current_user?
+    @user == current_user
   end
 
   def user_params
@@ -30,9 +30,7 @@ class UsersController < ApplicationController
   end
 
   def user_equal_current_user?
-    return false if current_user?(@user)
-
-    redirect_to user_path(@user)
+    redirect_to user_path(@user) unless current_user?
   end
 
   def set_user

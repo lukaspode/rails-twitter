@@ -82,7 +82,7 @@
   }
 
   .sidemenu-item{
-    @apply flex gap-5 py-[0.9rem] pl-[0.6rem] pr-36 items-center hover:bg-slate-200 hover:rounded-full ease-in duration-100;
+    @apply flex gap-0 xl:gap-5 py-[0.9rem] px-[0.6rem] xl:pr-36 items-center hover:bg-slate-200 hover:rounded-full ease-in duration-100;
   }
 
   .sidemenu-title{
