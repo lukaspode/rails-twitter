@@ -8,10 +8,6 @@ Rails.application.routes.draw do
   }
   get 'up' => 'rails/health#show', as: :rails_health_check
 
-  devise_scope :user do
-    get 'signin' => 'users/sessions#create'
-    get 'signup' => 'users/registrations#new'
-  end
-
-  resources :users, only: %i[show update edit]
+  resources :users, only: :show
+  resource :user, only: %i[edit update], controller: :user
 end
