@@ -35,5 +35,7 @@ group :development do
 end
 
 group :test do
+  gem 'better_html', '~> 2.0', '>= 2.0.2'
+  gem 'erb_lint', '~> 0.5.0'
   gem 'shoulda-matchers', '~> 5.3'
 end
