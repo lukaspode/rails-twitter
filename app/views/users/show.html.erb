@@ -1,12 +1,10 @@
 <div class="flex flex-row justify-center w-full h-screen ">
-  
-  <%= render 'sidemenu', object: @user%>
+  <%= render "sidemenu", object: @user %>
 
   <div class="inline-flex flex-col items-start sm:w-[37.5rem] w-full">
-
     <div class="flex flex-row w-full ">
       <div class="">
-        <%= image_tag 'back_arrow_icon', class: 'p-1 m-3.5 mr-6 inline-block' %>
+        <%= image_tag "back_arrow_icon", class: "p-1 m-3.5 mr-6 inline-block" %>
       </div>
       <div class=" flex-col mt-1.5 inline-block">
         <h2 class="heading-4 font-bold"><%= @user.name %></h2>
@@ -15,17 +13,16 @@
     </div>
 
     <div class="h-min w-full">
-      <div class="h-[12.5rem] w-full shrink-0 bg-dark-300">
-      </div>
+      <div class="h-[12.5rem] w-full shrink-0 bg-dark-300"></div>
 
       <div class="mx-3.5">
         <div class="flex justify-between w-full h-auto mb-1">
-          <%= image_tag 'profile_picture' , class: 'profile-picture'%>
+          <%= image_tag "profile_picture", class: "profile-picture" %>
           <% if current_user? %>
-            <%= link_to "Edit Profile", edit_user_path, class: 'btn btn-md btn-secondary sm:w-28 w-24 mt-2.5', data: { turbo_frame: 'modal' } %>
+            <%= link_to "Edit Profile", edit_user_path, class: "btn btn-md btn-secondary sm:w-28 w-24 mt-2.5", data: { turbo_frame: "modal" } %>
           <% end %>
         </div>
-        
+
         <div class="flex flex-col items-start mb-2.5">
           <h3 class="heading-3"><%= @user.name %></h3>
           <p class="text-base text-dark-400">@<%= @user.username %></p>
@@ -38,19 +35,19 @@
 
         <div class="flex flex-inline items-start gap-2 text-dark-400 mb-2.5 xl:text-base text-sm">
           <div class="flex gap-1 justify-center">
-            <%= image_tag 'location_icon', class: 'px-[0.16rem] py-[0.1rem]' %>
+            <%= image_tag "location_icon", class: "px-[0.16rem] py-[0.1rem]" %>
             <p>Montevideo</p>
           </div>
           <div class="flex gap-1 justify-center">
-            <%= image_tag 'calendar_icon', class: 'px-[0.16rem] py-[0.1rem]' %>
+            <%= image_tag "calendar_icon", class: "px-[0.16rem] py-[0.1rem]" %>
             <p>Joined <%= @user.confirmed_at.strftime("%B %Y") %></p>
           </div>
         </div>
-        
+
         <div class="flex mb-2.5 xl:text-base text-sm">
           <div class="flex flex-inline items-start gap-1 mr-5">
             <p class="font-bold text-dark-900">231</p>
-            <p class="font-medium text-dark-400">Following</p>
+            <p class="font-medium text-dark-400">Following</p>s
           </div>
 
           <div class="flex flex-inline items-start gap-1">
@@ -59,8 +56,6 @@
           </div>
         </div>
       </div>
-      
-
     </div>
 
     <div class="h-14 border-b-2 border-dark-200 w-full">
@@ -71,7 +66,7 @@
           <li class="tabbar-link">Media</li>
           <li class="tabbar-link">Likes</li>
         </ul>
-      <nav/>
+      </nav>
     </div>
 
     <div class="">
@@ -86,5 +81,4 @@
   <div class="flex-col lg:block hidden shrink-0 w-[22rem] ml-7 bg-red-50">
     <%# sidecolumn %>
   </div>
-
-</div>    
+</div>

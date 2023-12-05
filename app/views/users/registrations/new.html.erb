@@ -1,36 +1,37 @@
 <div class="w-screen h-screen flex">
   <div class="max-w-[37.5rem] max-h-[46.875rem] w-full h-full m-auto rounded rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.15)] flex flex-wrap">
     <h3 class="heading-3 m-6">Step 2 of 3</h3>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'w-full mx-14 flex flex-col gap-y-5' }) do |f| %>
-      <%= render '/shared/errors', resource: %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "w-full mx-14 flex flex-col gap-y-5" }) do |f| %>
+      <%= render "/shared/errors", resource: %>
 
       <h2 class="heading-2 mb-2.5">Create your account</h2>
 
       <div class="w-full">
-        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Name', class: 'input' %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Name", class: "input" %>
       </div>
 
       <div class="w-full">
-        <%= f.email_field :email, autocomplete: "email ", placeholder: 'Email', class: 'input' %>
+        <%= f.email_field :email, autocomplete: "email ", placeholder: "Email", class: "input" %>
       </div>
 
       <div class="w-full">
-        <%= f.text_field :username, autocomplete: "username", placeholder: 'Username', class: 'input' %>
+        <%= f.text_field :username, autocomplete: "username", placeholder: "Username", class: "input" %>
       </div>
-    
+
       <div class="w-full">
-        <%= f.password_field :password, autocomplete: "password", placeholder: 'Password', class: 'input' %>
+        <%= f.password_field :password, autocomplete: "password", placeholder: "Password", class: "input" %>
       </div>
 
       <div>
-        <h4 class="heading-5 my-2.5" >Date of birth</h4>
+        <h4 class="heading-5 my-2.5">Date of birth</h4>
         <p class="description-2">This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</p>
       </div>
-    
+
       <div class="w-full">
-        <%= f.date_field :birth, autocomplete: "birth", placeholder: 'Date of birth', class: 'input' %>
+        <%= f.date_field :birth, autocomplete: "birth", placeholder: "Date of birth", class: "input" %>
       </div>
-      <%= f.submit "Next", class: 'btn btn-dark btn-lg' %>
+
+      <%= f.submit "Next", class: "btn btn-dark btn-lg" %>
     <% end %>
   </div>
 </div>

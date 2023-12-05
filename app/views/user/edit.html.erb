@@ -1,47 +1,42 @@
-<%= turbo_frame_tag 'modal' do %>
+<%= turbo_frame_tag "modal" do %>
   <div class="w-screen h-screen absolute flex bg-dark-200/90">
     <div class='w-[37.5rem] h-[55.5rem] m-auto bg-white rounded-3xl shadow-lg'>
-
       <div class="flex w-full h-[4.188rem] items-center">
         <div class="flex-col flex-none m-6">
-          <%= link_to image_tag('close_icon'), '#', data: {
-            turbo_frame: "_top",
-            controler: "modals",
-            action: "modals#close"
-        } %>
+          <%= link_to image_tag("close_icon"), "#", data: {
+                turbo_frame: "_top",
+                controler: "modals",
+                action: "modals#close"
+              } %>
         </div>
-
-        <h2 class="heading-3 m-6">Edit Profile</h2> 
+        <h2 class="heading-3 m-6">Edit Profile</h2>
       </div>
 
-      <div class="h-[12.5rem] bg-dark-300">
-      </div>
+      <div class="h-[12.5rem] bg-dark-300"></div>
 
-      <%= image_tag 'profile_picture', class: 'profile-picture ml-3.5' %>
+      <%= image_tag "profile_picture", class: "profile-picture ml-3.5" %>
 
-      <%= form_with(model: @user, html: { id: dom_id(@user), class: 'max-w-[30.2rem] w-full h-full mx-14 mt-9 flex flex-col gap-y-5' }, :url =>{ :action => "update" }, method:'put' ) do |f| %>
-
+      <%= form_with(model: @user, html: { id: dom_id(@user), class: "max-w-[30.2rem] w-full h-full mx-14 mt-9 flex flex-col gap-y-5" }, url: { action: "update" }, method: "put") do |f| %>
         <div class="w-full">
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Name', class: 'input' %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Name", class: "input" %>
         </div>
 
         <div class="w-full">
-          <%= f.text_area :bio, autocomplete: "bio", placeholder: 'Bio', row: 2, class: 'input  h-[7.5rem]' %>
-        </div>
-      
-        <div class="w-full">
-          <%= f.text_field :location, autocomplete: "location", placeholder: 'Location', class: 'input' %>
+          <%= f.text_area :bio, autocomplete: "bio", placeholder: "Bio", row: 2, class: "input  h-[7.5rem]" %>
         </div>
 
-        <h4 class="heading-5" >Date of birth</h4>
-      
         <div class="w-full">
-          <%= f.date_field :birth, autocomplete: "birth", placeholder: 'Date of birth', class: 'input' %>
+          <%= f.text_field :location, autocomplete: "location", placeholder: "Location", class: "input" %>
         </div>
 
-        <%= f.submit "Save", class: 'btn btn-dark btn-lg', data: { turbo_frame: "_top" } %>
-        
+        <h4 class="heading-5">Date of birth</h4>
+
+        <div class="w-full">
+          <%= f.date_field :birth, autocomplete: "birth", placeholder: "Date of birth", class: "input" %>
+        </div>
+
+        <%= f.submit "Save", class: "btn btn-dark btn-lg", data: { turbo_frame: "_top" } %>
       <% end %>
     </div>
   </div>
-<%end%>
+<% end %>
