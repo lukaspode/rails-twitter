@@ -2,53 +2,53 @@
   <%# TOP %>
   <div class="flex flex-col w-full h-[38.25rem]">
     <div class="flex flex-row p-3 sm:block hidden">
-      <%= link_to image_tag('twitter_icon'), '#' %>
+      <%= link_to image_tag("twitter_icon"), "#" %>
     </div>
 
     <nav class="flex flex-col items-start w-full">
       <ul class="w-full">
         <li class="sidemenu-item">
-          <%= image_tag 'home_icon', class: 'sidemenu-icon' %>
+          <%= image_tag "home_icon", class: "sidemenu-icon" %>
           <h2 class='sidemenu-title'>Home</h2>
         </li>
 
         <li class="sidemenu-item">
-          <%= image_tag 'notification_icon', class: 'sidemenu-icon' %>
+          <%= image_tag "notification_icon", class: "sidemenu-icon" %>
           <p class='sidemenu-title'>Notifications</p>
         </li>
 
         <li class="sidemenu-item">
-          <%= image_tag 'message_icon', class: 'sidemenu-icon' %>
+          <%= image_tag "message_icon", class: "sidemenu-icon" %>
           <h2 class='sidemenu-title'>Messages</h2>
         </li>
 
         <li class="sidemenu-item">
-          <%= image_tag 'profile_icon', class: 'sidemenu-icon' %>
+          <%= image_tag "profile_icon", class: "sidemenu-icon" %>
           <h2 class='sidemenu-title'>Profile</h2>
         </li>
 
         <li class="sidemenu-item">
-          <%= image_tag 'more_icon', class: 'sidemenu-icon' %>
+          <%= image_tag "more_icon", class: "sidemenu-icon" %>
           <h2 class='sidemenu-title'>More</h2>
         </li>
       </ul>
     </nav>
 
     <div class="flex flex-col gap-3 items-start py-4">
-      <%= button_to 'Tweet', '#', class: 'btn btn-lg btn-primary px-24 xl:block hidden' %>
-      <%= image_tag 'add_tweet_icon', class: 'block xl:hidden w-12 h-12' %>
+      <%= button_to "Tweet", "#", class: "btn btn-lg btn-primary px-24 xl:block hidden" %>
+      <%= image_tag "add_tweet_icon", class: "block xl:hidden w-12 h-12" %>
     </div>
   </div>
 
   <%# PROFILE %>
   <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>
     <div class="flex items-center p-1 hover:bg-slate-200 hover:rounded-full ease-in duration-100">
-    <%= image_tag 'profile_picture', class: 'rounded-full w-10 h-10 mr-3' %>
+    <%= image_tag "profile_picture", class: "rounded-full w-10 h-10 mr-3" %>
     <div class="hidden xl:block">
       <h3 class="heading-5"><%= @user.name %></h3>
       <p class="text-base font-medium text-dark-400">@<%= @user.username %></p>
     </div>
-    <%= image_tag 'seemore_icon', class: 'ml-auto px-3 hidden xl:block' %>
+    <%= image_tag "seemore_icon", class: "ml-auto px-3 hidden xl:block" %>
     </div>
   <% end %>
 </div>

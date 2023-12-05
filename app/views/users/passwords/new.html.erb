@@ -1,17 +1,17 @@
 <div class="w-screen h-screen flex">
   <div class="max-w-[37.5rem] max-h-[40.625rem] min-h-[40.625rem] w-full m-auto rounded rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.15)] flex py-6">
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: 'w-full mx-14 flex flex-col gap-y-5' }) do |f| %> 
-      <%= render "/shared/errors", resource: resource %>
-      
-      <%= image_tag 'twitter_icon', class: 'w-8 h-8 mx-auto mb-0.75rem' %>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: "w-full mx-14 flex flex-col gap-y-5" }) do |f| %>
+      <%= render "/shared/errors", resource: %>
+
+      <%= image_tag "twitter_icon", class: "w-8 h-8 mx-auto mb-0.75rem" %>
       <h2 class="heading-2 mb-2.5 font-bold text-center">Find your twitter account</h2>
       <p class="description-1 text-center">Enter the email associated with your account to change your password.</p>
       <div class="field w-full">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'input' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "input" %>
       </div>
 
       <div class="mt-auto">
-        <%= f.submit "Next", class: 'btn btn-dark btn-lg' %>
+        <%= f.submit "Next", class: "btn btn-dark btn-lg" %>
       </div>
     <% end %>
   </div>
