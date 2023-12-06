@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'up' => 'rails/health#show', as: :rails_health_check
 
   resources :users, only: :show do
-    resources :tweets, only: %i[new create]
+    resources :tweets, only: %i[new create show]
   end
   resource :user, only: %i[edit update], controller: :user
 end
