@@ -6,8 +6,7 @@ class TweetsController < ApplicationController
   end
 
   def create
-    @tweet = Tweet.new(tweet_params)
-    @tweet.user = current_user
+    @tweet = current_user.tweets.new(tweet_params)
     if @tweet.save
       redirect_to user_path(current_user), message: 'Tweet successfully created'
     else
