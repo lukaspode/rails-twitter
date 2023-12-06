@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 class TweetsController < ApplicationController
+  before_action :set_user
+
+  def index; end
+
   def show
-    @user = User.find(params[:user_id])
     @tweet = @user.tweets.find(params[:id])
   end
 
@@ -20,6 +23,10 @@ class TweetsController < ApplicationController
   end
 
   private
+
+  def set_user
+    @user = User.find(params[:user_id])
+  end
 
   def tweet_params
     params.require(:tweet).permit(:content)

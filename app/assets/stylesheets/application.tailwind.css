@@ -93,7 +93,16 @@
     @apply w-[1.875rem] h-[1.875rem] p-1;
   }
 
-  .nav-tweet-icon {
-    @apply flex flex-row gap-[0.62rem] p-2 hover:bg-dark-200 rounded-full ease-in duration-100;
+  .nav-tweet{
+    @apply flex w-full items-start py-1
   }
+
+  .nav-tweet-item{
+    @apply flex w-full items-center;
+  }
+
+  .nav-tweet-link{
+    @apply flex flex-row gap-2.5 p-2 hover:bg-dark-200 rounded-full ease-in duration-100;
+  }
+
 }
