@@ -34,7 +34,7 @@
       <div class="nav-tweet-item">
         <%= link_to "", class: "nav-tweet-link hover:bg-red-500/20" do %>
           <%= image_tag "like_icon", class: "nav-tweet-icon" %>
-          <p>9</p>
+          <p><%= tweet.likes.size %></p>
         <% end %>
       </div>
       <div class="nav-tweet-item">
