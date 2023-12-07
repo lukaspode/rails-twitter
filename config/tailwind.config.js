@@ -25,7 +25,7 @@ module.exports = {
           100: "#F7F9FA",
         },
         primary: "#1DA1F2",
-        red: "#F4245E",
+        // red: "#F4245E",
         "primary-dark": "#1A91DA",
       },
     },

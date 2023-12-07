@@ -1,16 +1,8 @@
 <div class="flex flex-row justify-center w-full h-screen ">
   <%= render "sidemenu", object: @user %>
 
-  <div class="inline-flex flex-col items-start sm:w-[37.5rem] w-full">
-    <div class="flex flex-row w-full ">
-      <div class="">
-        <%= image_tag "back_arrow_icon", class: "p-1 m-3.5 mr-6 inline-block" %>
-      </div>
-      <div class=" flex-col mt-1.5 inline-block">
-        <h2 class="heading-4 font-bold"><%= @user.name %></h2>
-        <p class="text-sm text-dark-400">tweets</p>
-      </div>
-    </div>
+  <div class="flex flex-col items-start sm:w-[37.5rem] w-full overflow-auto">
+    <%= render "users/header_profile", object: @user %>
 
     <div class="h-min w-full">
       <div class="h-[12.5rem] w-full shrink-0 bg-dark-300"></div>
@@ -69,8 +61,8 @@
       </nav>
     </div>
 
-    <div class="flex flex-col mt-2 gap-2 mx-auto overflow-auto">
-      <%= @user.tweets.each do |tweet| %>
+    <div class="flex flex-col mt-2 gap-2 mx-auto">
+      <% @user.tweets.reverse_each do |tweet| %>
         <%= render "tweets/tweet_card", object: @user, tweet: tweet %>
       <% end %>
     </div>

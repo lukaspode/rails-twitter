@@ -1,4 +1,4 @@
-<div class="w-[36.5rem] flex flex-row gap-[0.625rem] px-4 h-auto border-b-2 border-dark-200">
+<div class="tweet-card">
   <div class="flex flex-col">
     <%= image_tag "profile_picture", class: "rounded-full w-10 h-10 mr-3" %>
   </div>
@@ -18,28 +18,28 @@
       <p>* * MEDIA CONTENT * *<p>
     </div>
 
-    <nav class="flex w-full items-start py-1">
-      <div class="flex w-full items-center">
-        <%= link_to "", class: "flex flex-row gap-2 p-2 hover:bg-dark-200 rounded-full ease-in duration-100" do %>
-          <%= image_tag "comment_icon" %>
+    <nav class="nav-tweet">
+      <div class="nav-tweet-item">
+        <%= link_to "", class: "nav-tweet-link" do %>
+          <%= image_tag "comment_icon", class: "nav-tweet-icon" %>
           <p>11</p>
         <% end %>
       </div>
-      <div class="flex w-full items-center">
-        <%= link_to "", class: "flex flex-row gap-2 p-2 hover:bg-dark-200 rounded-full ease-in duration-100" do %>
-          <%= image_tag "retweet_icon" %>
+      <div class="nav-tweet-item">
+        <%= link_to "", class: "nav-tweet-link hover:bg-green-500/20" do %>
+          <%= image_tag "retweet_icon", class: "nav-tweet-icon" %>
           <p>3</p>
         <% end %>
       </div>
-      <div class="flex w-full items-center">
-        <%= link_to "", class: "flex flex-row gap-2 p-2 hover:bg-dark-200 rounded-full ease-in duration-100" do %>
-          <%= image_tag "like_icon" %>
+      <div class="nav-tweet-item">
+        <%= link_to "", class: "nav-tweet-link hover:bg-red-500/20" do %>
+          <%= image_tag "like_icon", class: "nav-tweet-icon" %>
           <p>9</p>
         <% end %>
       </div>
-      <div class="flex w-full items-center">
-        <%= link_to "", class: "flex flex-row gap-2 p-2 hover:bg-dark-200 rounded-full ease-in duration-100" do %>
-          <%= image_tag "share_icon" %>
+      <div class="nav-tweet-item">
+        <%= link_to "", class: "nav-tweet-link" do %>
+          <%= image_tag "share_icon", class: "nav-tweet-icon" %>
           <p>12</p>
         <% end %>
       </div>

@@ -1,6 +1,6 @@
 <%= turbo_frame_tag "edit-profile-modal" do %>
-  <div class="w-screen h-screen absolute flex bg-black/20">
-    <div class='w-[37.5rem] h-[55.5rem] m-auto bg-white rounded-3xl shadow-lg'>
+  <div class="w-screen h-screen absolute flex bg-black/20 z-10">
+    <div class='w-full sm:w-[37.5rem] h-full sm:h-[55.5rem] m-auto bg-white sm:rounded-3xl sm:shadow-lg'>
       <div class="flex w-full h-[4.188rem] items-center">
         <div class="m-6">
           <%= link_to image_tag("close_icon", class: "w-3.5 h-3.5"), "", data: {
@@ -16,7 +16,7 @@
 
       <%= image_tag "profile_picture", class: "profile-picture ml-3.5" %>
 
-      <%= form_with(model: @user, html: { id: dom_id(@user), class: "max-w-[30.2rem] w-full h-full mx-14 mt-9 flex flex-col gap-y-5" }, url: { action: "update" }, method: "put") do |f| %>
+      <%= form_with(model: @user, html: { id: dom_id(@user), class: "sm:w-[30rem] w-full h-full m-auto sm:mx-14 mt-9 flex flex-col gap-y-5" }, url: { action: "update" }, method: "put") do |f| %>
         <div class="w-full">
           <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Name", class: "input" %>
         </div>
