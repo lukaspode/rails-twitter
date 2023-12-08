@@ -1,5 +1,5 @@
 <div class="flex flex-row justify-center w-full h-screen ">
-  <%= render "sidemenu", object: @user %>
+  <%= render "sidemenu", object: current_user %>
 
   <div class="flex flex-col items-start sm:w-[37.5rem] w-full overflow-auto">
     <%= render "users/header_profile", object: @user %>
@@ -63,7 +63,7 @@
 
     <div class="flex flex-col mt-2 gap-2 mx-auto">
       <% @user.tweets.reverse_each do |tweet| %>
-        <%= render "tweets/tweet_card", object: @user, tweet: tweet %>
+        <%= render "tweets/tweet_card", object: @user, tweet:, liked: current_user.likes.find_by(tweet_id: tweet.id) %>
       <% end %>
     </div>
   </div>
