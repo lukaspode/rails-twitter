@@ -34,8 +34,8 @@
       <div class="nav-tweet-item">
         <%# <%= like_button(liked, @user, tweet)%>
         <% if current_user %>
-          <% if current_user.likes && current_user.likes.include?(liked) %>
-            <%= link_to user_tweet_like_path(@user, tweet, liked), class: "nav-tweet-link hover:bg-red-500/20", data: { turbo_method: :delete } do %>
+          <% if current_user.likes && current_user.likes.include?(current_user.likes.find_by(tweet_id: tweet.id)) %>
+            <%= link_to user_tweet_like_path(@user, tweet, current_user.likes.find_by(tweet_id: tweet.id)), class: "nav-tweet-link hover:bg-red-500/20", data: { turbo_method: :delete } do %>
               <%= image_tag "liked_icon", class: "nav-tweet-icon" %>
               <p><%= tweet.likes.size %></p>
             <% end %>

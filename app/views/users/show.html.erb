@@ -63,7 +63,7 @@
 
     <div class="flex flex-col mt-2 gap-2 mx-auto">
       <% @user.tweets.reverse_each do |tweet| %>
-        <%= render "tweets/tweet_card", object: @user, tweet:, liked: current_user.likes.find_by(tweet_id: tweet.id) %>
+        <%= render "tweets/tweet_card", object: @user, tweet: %>
       <% end %>
     </div>
   </div>
