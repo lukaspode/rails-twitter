@@ -62,8 +62,8 @@
     </div>
 
     <div class="flex flex-col mt-2 gap-2 mx-auto items-start sm:w-[37.5rem] w-full overflow-auto">
-      <% @user.tweets.reverse_each do |tweet| %>
-        <%= render "tweets/tweet_card", object: @user, tweet: %>
+      <% @tweets.each do |tweet| %>
+        <%= render "tweets/tweet_card", tweet: %>
       <% end %>
     </div>
   </div>

@@ -7,7 +7,7 @@
     <div class="flex gap-1 pb-1 items-center">
       <h3 class="heading-5 font-bold"><%= @user.name %></h3>
       <p class="text-dark-400">@<%= @user.username %><p>
-      <p class="text-dark-400"><%= time_ago_in_words(tweet.created_at)%></p>
+      <p class="text-dark-400"><%= time_ago_in_words(tweet.created_at) %></p>
     </div>
 
     <div class="flex items-start">
@@ -32,21 +32,20 @@
         <% end %>
       </div>
       <div class="nav-tweet-item">
-        <%# <%= like_button(liked, @user, tweet)%>
         <% if current_user %>
-          <% if current_user.likes && current_user.likes.include?(current_user.likes.find_by(tweet_id: tweet.id)) %>
-            <%= link_to user_tweet_like_path(@user, tweet, current_user.likes.find_by(tweet_id: tweet.id)), class: "nav-tweet-link hover:bg-red-500/20", data: { turbo_method: :delete } do %>
+          <% if tweet.liked? %>
+            <%= link_to like_tweet_path(tweet), class: "nav-tweet-link hover:bg-red-500/20", data: { turbo_method: :post } do %>
               <%= image_tag "liked_icon", class: "nav-tweet-icon" %>
               <p><%= tweet.likes.size %></p>
             <% end %>
           <% else %>
-            <%= link_to user_tweet_likes_path(@user, tweet), class: "nav-tweet-link hover:bg-red-500/20", data: { turbo_method: :post } do %>
+            <%= link_to like_tweet_path(tweet), class: "nav-tweet-link hover:bg-red-500/20", data: { turbo_method: :post } do %>
               <%= image_tag "like_icon", class: "nav-tweet-icon" %>
               <p><%= tweet.likes.size %></p>
             <% end %>
           <% end %>
         <% else %>
-          <%= link_to new_user_session_path	, class: "nav-tweet-link hover:bg-red-500/20", data: { turbo_method: :post } do %>
+          <%= link_to new_user_session_path, class: "nav-tweet-link hover:bg-red-500/20", data: { turbo_method: :post } do %>
             <%= image_tag "like_icon", class: "nav-tweet-icon" %>
             <p><%= tweet.likes.size %></p>
           <% end %>

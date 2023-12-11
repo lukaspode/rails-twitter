@@ -6,4 +6,8 @@ class Tweet < ApplicationRecord
   has_many :user_likes, through: :likes, source: :user
 
   validates :content, length: { minimum: 1, maximum: 280 }, presence: true
+
+  def liked?
+    respond_to?(:liked) ? liked == 1 : false
+  end
 end

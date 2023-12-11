@@ -5,7 +5,16 @@ class UsersController < ApplicationController
 
   helper_method :current_user?
 
-  def show; end
+  def show
+    @tweets = @user.tweets
+                   .select('tweets.*',
+                           "COUNT(CASE WHEN likes.user_id = #{current_user.id} THEN 1 ELSE NULL END) AS liked")
+                   .left_joins(:likes)
+                   .group('tweets.id')
+                   .order(created_at: :desc)
+
+    render :show
+  end
 
   private
 
