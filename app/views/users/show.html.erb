@@ -12,6 +12,12 @@
           <%= image_tag "profile_picture", class: "profile-picture" %>
           <% if current_user? %>
             <%= link_to "Edit Profile", edit_user_path, class: "btn btn-md btn-secondary sm:w-28 w-24 mt-2.5", data: { turbo_frame: "edit-profile-modal" } %>
+          <% elsif current_user %>
+            <% if @followed %>
+              <%= link_to "Unfollow", follow_user_path, class: "btn btn-md btn-secondary sm:w-28 w-24 mt-2.5", data: { turbo_method: "post" } %>
+            <% else %>
+              <%= link_to "Follow", follow_user_path, class: "btn btn-md btn-secondary sm:w-28 w-24 mt-2.5", data: { turbo_method: "post" } %>
+            <% end %>
           <% end %>
         </div>
 

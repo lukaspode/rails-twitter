@@ -18,5 +18,9 @@ Rails.application.routes.draw do
     post :like, on: :member
   end
 
+  resources :users, only: [] do
+    post :follow, on: :member
+  end
+
   resource :user, only: %i[edit update], controller: :user
 end
