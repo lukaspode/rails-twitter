@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddTweetCountToUser < ActiveRecord::Migration[7.1]
   def up
     change_table :users, bulk: true do |t|

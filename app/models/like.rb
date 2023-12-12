@@ -9,7 +9,7 @@ class Like < ApplicationRecord
   private
 
   def self_like
-    return unless user_id == tweet.user_id
+    return unless user_id.present? && user_id == tweet.user_id
 
     errors.add('you cannot like your own tweet')
   end
