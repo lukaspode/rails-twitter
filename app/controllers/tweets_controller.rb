@@ -10,7 +10,8 @@ class TweetsController < ApplicationController
     if liked
       Like.find_by(user: current_user, tweet: @tweet).destroy!
     else
-      @tweet.likes.create!(user: current_user)
+      @like = @tweet.likes.new(user: current_user)
+      @like.save
     end
   end
 end

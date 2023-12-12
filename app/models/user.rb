@@ -5,8 +5,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_tweets, through: :likes, source: :tweet
 
-  has_many :followed, inverse_of: 'followers', class_name: 'User', dependent: :destroy
-  has_many :followers, inverse_of: 'followed', class_name: 'User', dependent: :destroy
+  has_many :followed, inverse_of: 'followers', class_name: 'Follow', dependent: :destroy
+  has_many :followers, inverse_of: 'followed', class_name: 'Follow', dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable

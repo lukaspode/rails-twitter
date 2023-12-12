@@ -5,8 +5,12 @@ class LikesController < ApplicationController
   before_action :set_tweet, :set_user
 
   def create
-    @tweet.likes.create!(user: current_user)
-    redirect_to @user
+    like = @tweet.likes.new(user: current_user)
+    if like.save
+      redirect_to @user
+    else
+      render :@user, status: :unprocessable_entity
+    end
   end
 
   def destroy
