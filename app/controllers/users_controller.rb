@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     if followed
       Follow.find_by(followed_id: @user.id, follower_id: current_user.id).destroy!
     else
-      @follow = current_user.followed.new(followed: @user)
+      @follow = current_user.followed.create(followed: @user)
       @follow.save
     end
 
