@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [] do
     post :follow, on: :member
+    resources :following, only: :index, controller: 'users/following'
+    resources :followers, only: :index, controller: 'users/followers'
   end
 
   resource :user, only: %i[edit update], controller: :user

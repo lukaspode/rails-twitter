@@ -81,6 +81,10 @@
     @apply sm:h-[8.688rem] sm:w-[8.688rem] h-[4.438rem] w-[4.438rem] rounded-full sm:mt-[-4.3rem] mt-[-2.3rem] border-4 border-dark-900 shrink-0;
   }
 
+  .profile-picture-sm{
+    @apply h-10 w-10 rounded-full;
+  }
+
   .sidemenu-item{
     @apply flex gap-0 xl:gap-5 py-[0.9rem] px-[0.6rem] xl:pr-36 items-center hover:bg-dark-200 hover:rounded-full ease-in duration-100;
   }

@@ -6,10 +6,10 @@ class User < ApplicationRecord
   has_many :liked_tweets, through: :likes, source: :tweet
 
   has_many :followers, inverse_of: 'followed', class_name: 'Follow', dependent: :destroy
-  has_many :follower_users, through: :followers, source: :user
+  has_many :follower_users, through: :followers, source: :follower
 
   has_many :followed, inverse_of: 'follower', class_name: 'Follow', dependent: :destroy
-  has_many :followed_users, through: :followed, source: :user
+  has_many :followed_users, through: :followed, source: :followed
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
@@ -20,6 +20,10 @@ class User < ApplicationRecord
   validates :bio, length: { maximum: 160 }
   validates :website, format: { with: %r{http(s)?://([a-z0-9-]+\.)?[a-z0-9-]+(\.[a-z]{2,})+} }, allow_blank: true
   validate :validate_age
+
+  def following?
+    respond_to?(:following) ? following == 1 : false
+  end
 
   private
 

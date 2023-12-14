@@ -18,7 +18,6 @@ class UsersController < ApplicationController
     else
       @tweets = @user.tweets
     end
-    render :show
   end
 
   def follow

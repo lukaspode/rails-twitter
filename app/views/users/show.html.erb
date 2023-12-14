@@ -43,15 +43,19 @@
         </div>
 
         <div class="flex mb-2.5 xl:text-base text-sm">
-          <div class="flex flex-inline items-start gap-1 mr-5">
-            <p class="font-bold text-dark-900"><%= @user.following_count %></p>
-            <p class="font-medium text-dark-400">Following</p>
-          </div>
+          <%= link_to user_following_index_path(@user), class: "hover:underline hover:underline-offset-4" do %>
+            <div class="flex flex-inline items-start gap-1 mr-5">
+              <p class="font-bold text-dark-900"><%= @user.following_count %></p>
+              <p class="font-medium text-dark-400">Following</p>
+            </div>
+          <% end %>
 
-          <div class="flex flex-inline items-start gap-1">
-            <p class="font-bold text-dark-900"><%= @user.followers_count %></p>
-            <p class="font-medium text-dark-400">Followers</p>
-          </div>
+          <%= link_to user_followers_path(@user), class: "hover:underline hover:underline-offset-4" do %>
+            <div class="flex flex-inline items-start gap-1">
+                <p class="font-bold text-dark-900"><%= @user.followers_count %></p>
+                <p class="font-medium text-dark-400">Followers</p>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
