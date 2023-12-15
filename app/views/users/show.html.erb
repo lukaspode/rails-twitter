@@ -1,84 +1,77 @@
-<div class="flex flex-row justify-center w-full h-screen ">
-  <%= render "sidemenu", object: current_user %>
 
-  <div class="flex flex-col items-start sm:w-[37.5rem] w-full overflow-auto">
-    <%= render "users/header_profile", object: @user %>
+<div class="flex flex-col w-full">
+  <%= render "users/header_profile", object: @user %>
 
-    <div class="h-min w-full">
-      <div class="h-[12.5rem] w-full shrink-0 bg-dark-300"></div>
+  <div class="h-min w-full">
+    <div class="h-[12.5rem] w-full shrink-0 bg-dark-300"></div>
 
-      <div class="mx-3.5">
-        <div class="flex justify-between w-full h-auto mb-1">
-          <%= image_tag "profile_picture", class: "profile-picture" %>
-          <% if current_user? %>
-            <%= link_to "Edit Profile", edit_user_path, class: "btn btn-md btn-secondary sm:w-28 w-24 mt-2.5", data: { turbo_frame: "edit-profile-modal" } %>
-          <% elsif current_user %>
-            <% if @followed %>
-              <%= link_to "Unfollow", follow_user_path, class: "btn btn-md btn-secondary sm:w-28 w-24 mt-2.5", data: { turbo_method: "post" } %>
-            <% else %>
-              <%= link_to "Follow", follow_user_path, class: "btn btn-md btn-secondary sm:w-28 w-24 mt-2.5", data: { turbo_method: "post" } %>
-            <% end %>
+    <div class="mx-3.5">
+      <div class="flex justify-between w-full h-auto mb-1">
+        <%= image_tag "profile_picture", class: "profile-picture" %>
+        <% if current_user? %>
+          <%= link_to "Edit Profile", edit_user_path, class: "btn btn-md btn-secondary sm:w-28 w-24 mt-2.5", data: { turbo_frame: "edit-profile-modal" } %>
+        <% elsif current_user %>
+          <% if @followed %>
+            <%= link_to "Unfollow", follow_user_path, class: "btn btn-md btn-secondary sm:w-28 w-24 mt-2.5", data: { turbo_method: "post" } %>
+          <% else %>
+            <%= link_to "Follow", follow_user_path, class: "btn btn-md btn-secondary sm:w-28 w-24 mt-2.5", data: { turbo_method: "post" } %>
           <% end %>
+        <% end %>
+      </div>
+
+      <div class="flex flex-col items-start mb-2.5">
+        <h3 class="heading-3"><%= @user.name %></h3>
+        <p class="text-base text-dark-400">@<%= @user.username %></p>
+      </div>
+
+      <div class="my-2.5 text-dark-900">
+        <p><%= @user.email %></p>
+        <p><%= @user.bio %></p>
+      </div>
+
+      <div class="flex flex-inline items-start gap-2 text-dark-400 mb-2.5 xl:text-base text-sm">
+        <div class="flex gap-1 justify-center">
+          <%= image_tag "location_icon", class: "px-[0.16rem] py-[0.1rem]" %>
+          <p>Montevideo</p>
         </div>
-
-        <div class="flex flex-col items-start mb-2.5">
-          <h3 class="heading-3"><%= @user.name %></h3>
-          <p class="text-base text-dark-400">@<%= @user.username %></p>
-        </div>
-
-        <div class="my-2.5 text-dark-900">
-          <p><%= @user.email %></p>
-          <p><%= @user.bio %></p>
-        </div>
-
-        <div class="flex flex-inline items-start gap-2 text-dark-400 mb-2.5 xl:text-base text-sm">
-          <div class="flex gap-1 justify-center">
-            <%= image_tag "location_icon", class: "px-[0.16rem] py-[0.1rem]" %>
-            <p>Montevideo</p>
-          </div>
-          <div class="flex gap-1 justify-center">
-            <%= image_tag "calendar_icon", class: "px-[0.16rem] py-[0.1rem]" %>
-            <p>Joined <%= @user.confirmed_at.strftime("%B %Y") %></p>
-          </div>
-        </div>
-
-        <div class="flex mb-2.5 xl:text-base text-sm">
-          <%= link_to user_following_index_path(@user), class: "hover:underline hover:underline-offset-4" do %>
-            <div class="flex flex-inline items-start gap-1 mr-5">
-              <p class="font-bold text-dark-900"><%= @user.following_count %></p>
-              <p class="font-medium text-dark-400">Following</p>
-            </div>
-          <% end %>
-
-          <%= link_to user_followers_path(@user), class: "hover:underline hover:underline-offset-4" do %>
-            <div class="flex flex-inline items-start gap-1">
-                <p class="font-bold text-dark-900"><%= @user.followers_count %></p>
-                <p class="font-medium text-dark-400">Followers</p>
-            </div>
-          <% end %>
+        <div class="flex gap-1 justify-center">
+          <%= image_tag "calendar_icon", class: "px-[0.16rem] py-[0.1rem]" %>
+          <p>Joined <%= @user.confirmed_at.strftime("%B %Y") %></p>
         </div>
       </div>
-    </div>
 
-    <div class="h-14 border-b-2 border-dark-200 w-full">
-      <nav class="w-full">
-        <ul class="felex inline-flex w-full">
-          <li class="tabbar-link">Tweets</li>
-          <li class="tabbar-link">Tweets & replies</li>
-          <li class="tabbar-link">Media</li>
-          <li class="tabbar-link">Likes</li>
-        </ul>
-      </nav>
-    </div>
+      <div class="flex mb-2.5 xl:text-base text-sm">
+        <%= link_to user_following_index_path(@user), class: "hover:underline hover:underline-offset-4" do %>
+          <div class="flex flex-inline items-start gap-1 mr-5">
+            <p class="font-bold text-dark-900"><%= @user.following_count %></p>
+            <p class="font-medium text-dark-400">Following</p>
+          </div>
+        <% end %>
 
-    <div class="flex flex-col mt-2 gap-2 mx-auto items-start sm:w-[37.5rem] w-full overflow-auto">
-      <% @tweets.each do |tweet| %>
-        <%= render "users/tweets/tweet_card", tweet: %>
-      <% end %>
+        <%= link_to user_followers_path(@user), class: "hover:underline hover:underline-offset-4" do %>
+          <div class="flex flex-inline items-start gap-1">
+              <p class="font-bold text-dark-900"><%= @user.followers_count %></p>
+              <p class="font-medium text-dark-400">Followers</p>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 
-  <div class="flex-col lg:block hidden shrink-0 w-[22rem] ml-7 bg-red-50">
-    <%# sidecolumn %>
+  <div class="h-14 border-b-2 border-dark-200 w-full">
+    <nav class="w-full">
+      <ul class="felex inline-flex w-full">
+        <li class="tabbar-link">Tweets</li>
+        <li class="tabbar-link">Tweets & replies</li>
+        <li class="tabbar-link">Media</li>
+        <li class="tabbar-link">Likes</li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="flex flex-col mt-2 gap-2 mx-auto items-start sm:w-[37.5rem] w-full overflow-auto">
+    <% @tweets.each do |tweet| %>
+      <%= render "users/tweets/tweet_card", tweet: %>
+    <% end %>
   </div>
 </div>

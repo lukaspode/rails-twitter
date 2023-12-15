@@ -21,6 +21,10 @@
     @apply bg-dark-900 text-white hover:btn-primary;
   }
 
+  .btn-white {
+    @apply bg-white text-dark-900 hover:text-red-600 border-2 border-dark-200 hover:border-red-600;
+  }
+
   .btn-sm {
     @apply h-[1.875rem] w-24 ;
   }
@@ -116,5 +120,14 @@
   .nav-tweet-icon{
     @apply w-3.5 h-3.5;
   } 
+
+  .name-text{
+    @apply text-base text-dark-900 font-bold
+  }
+
+  .username-text{
+    @apply text-base text-dark-400 font-medium
+  }
+
 
 }

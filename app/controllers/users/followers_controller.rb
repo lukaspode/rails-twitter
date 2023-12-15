@@ -9,11 +9,14 @@ module Users
       @followers = if current_user
                      @user.follower_users
                           .select('users.*',
-                                  "COUNT(CASE WHEN f.followed_id = #{current_user.id} THEN 1 ELSE NULL END) AS following")
-                          .joins("LEFT JOIN follows AS f ON f.followed_id = #{current_user.id}")
+                                  "COUNT(CASE WHEN c_u.follower_id = #{current_user.id} THEN 1 ELSE NULL END) AS following")
+                          .joins("LEFT OUTER JOIN (SELECT u.*, f.followed_id, f.follower_id
+                                                 FROM follows AS f INNER JOIN users AS u ON f.followed_id = u.id
+                                                 WHERE f.follower_id = #{current_user.id}
+                              ) AS c_u ON users.id = c_u.followed_id")
                           .group('users.id')
                    else
-                     @user.follower_users
+                     @user.followed_users
                    end
     end
 

@@ -16,7 +16,7 @@
 
       <%= image_tag "profile_picture", class: "profile-picture ml-3.5" %>
 
-      <%= form_with(model: @user, html: { id: dom_id(@user), class: "sm:w-[30rem] w-full h-full m-auto sm:mx-14 mt-9 flex flex-col gap-y-5" }, url: { action: "update" }, method: "put") do |f| %>
+      <%= form_with(model: @user, html: { id: dom_id(@user), class: "sm:w-[30rem] w-full m-auto sm:mx-14 mt-9 flex flex-col gap-y-5" }, url: { action: "update" }, method: "put") do |f| %>
         <div class="w-full">
           <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Name", class: "input" %>
         </div>
