@@ -22,7 +22,7 @@ class User < ApplicationRecord
   validate :validate_age
 
   def following?
-    respond_to?(:following) ? following == 1 : false
+    respond_to?(:following) ? following == true : false
   end
 
   private

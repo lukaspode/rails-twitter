@@ -94,11 +94,11 @@
   }
 
   .sidemenu-title{
-    @apply xl:block text-lg hidden font-bold text-dark-900;
+    @apply hidden xl:block text-lg font-bold text-dark-900;
   }
 
   .sidemenu-icon{
-    @apply w-[1.875rem] h-[1.875rem] p-1;
+    @apply w-[1.875rem] h-[1.875rem] p-[0.065rem];
   }
 
   .tweet-card{
