@@ -39,3 +39,7 @@ group :test do
   gem 'erb_lint', '~> 0.5.0'
   gem 'shoulda-matchers', '~> 5.3'
 end
+
+group :production do
+  gem 'image_processing', '>= 1.2'
+end
