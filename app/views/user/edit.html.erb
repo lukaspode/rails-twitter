@@ -1,9 +1,9 @@
-<%= turbo_frame_tag "modal" do %>
-  <div class="w-screen h-screen absolute flex bg-dark-200/90">
+<%= turbo_frame_tag "edit-profile-modal" do %>
+  <div class="w-screen h-screen absolute flex bg-black/20">
     <div class='w-[37.5rem] h-[55.5rem] m-auto bg-white rounded-3xl shadow-lg'>
       <div class="flex w-full h-[4.188rem] items-center">
-        <div class="flex-col flex-none m-6">
-          <%= link_to image_tag("close_icon"), "#", data: {
+        <div class="m-6">
+          <%= link_to image_tag("close_icon", class: "w-3.5 h-3.5"), "", data: {
                 turbo_frame: "_top",
                 controler: "modals",
                 action: "modals#close"
