@@ -12,10 +12,8 @@
       <% if current_user %>
         <% if user.following.present? and user.following? %>
           <%= link_to "Following", follow_user_path(user), class: "btn btn-md btn-white w-24", data: { turbo_method: "post" } %>
-        <% elsif user.following.present? and not user.following? %>
+        <% else user.following.present? and not user.following? %>
           <%= link_to "Follow", follow_user_path(user), class: "btn btn-md btn-dark w-24", data: { turbo_method: "post" } %>
-        <% else %>
-          <%= link_to "Me", current_user, class: "btn btn-md btn-secondary w-24" %>
         <% end %>
       <% end %>
     </div>

@@ -82,7 +82,7 @@
   }
 
   .profile-picture{
-    @apply sm:h-[8.688rem] sm:w-[8.688rem] h-[4.438rem] w-[4.438rem] rounded-full sm:mt-[-4.3rem] mt-[-2.3rem] border-4 border-dark-900 shrink-0;
+    @apply sm:h-[8.688rem] sm:w-[8.688rem] h-[4.438rem] w-[4.438rem] rounded-full sm:mt-[-4.3rem] mt-[-2.3rem] border-4 border-dark-600 shrink-0;
   }
 
   .profile-picture-sm{

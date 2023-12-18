@@ -7,7 +7,12 @@
 
     <div class="mx-3.5">
       <div class="flex justify-between w-full h-auto mb-1">
-        <%= image_tag "profile_picture", class: "profile-picture" %>
+        <% if @user.profile_image.attached? %>
+          <%= image_tag @user.profile_image, class: "profile-picture" %>
+        <% else %>
+          <%= image_tag "blank_profile_picture", class: "profile-picture" %>
+        <% end %>
+
         <% if current_user? %>
           <%= link_to "Edit Profile", edit_user_path, class: "btn btn-md btn-secondary sm:w-28 w-24 mt-2.5", data: { turbo_frame: "edit-profile-modal" } %>
         <% elsif current_user %>

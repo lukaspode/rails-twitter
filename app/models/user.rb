@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :followed, inverse_of: 'follower', class_name: 'Follow', dependent: :destroy
   has_many :followed_users, through: :followed, source: :followed
 
+  has_one_attached :profile_image
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 

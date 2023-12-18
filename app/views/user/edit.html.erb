@@ -14,7 +14,14 @@
 
       <div class="h-[12.5rem] bg-dark-300"></div>
 
-      <%= image_tag "profile_picture", class: "profile-picture ml-3.5" %>
+      <div class="relative">
+        <% if @user.profile_image.attached? %>
+          <%= image_tag @user.profile_image, class: "profile-picture ml-3.5" %>
+        <% else %>
+          <%= image_tag "blank_profile_picture", class: "profile-picture ml-3.5" %>
+        <% end %>
+        <%= image_tag "change_profile_picture_icon", class: "" %>
+      </div>
 
       <%= form_with(model: @user, html: { id: dom_id(@user), class: "sm:w-[30rem] w-full m-auto sm:mx-14 mt-9 flex flex-col gap-y-5" }, url: { action: "update" }, method: "put") do |f| %>
         <div class="w-full">
@@ -33,6 +40,10 @@
 
         <div class="w-full">
           <%= f.date_field :birth, autocomplete: "birth", placeholder: "Date of birth", class: "input" %>
+        </div>
+
+        <div class="w-full">
+          <%= f.file_field :profile_image, autocomplete: "profile_image", placeholder: "profile image" %>
         </div>
 
         <%= f.submit "Save", class: "btn btn-dark btn-lg", data: { turbo_frame: "_top" } %>
