@@ -1,6 +1,6 @@
 <%= turbo_frame_tag "edit-profile-modal" do %>
   <div class="w-screen h-screen absolute flex bg-black/20 z-10">
-    <div class='w-full sm:w-[37.5rem] h-full sm:h-[55.5rem] m-auto bg-white sm:rounded-3xl sm:shadow-lg'>
+    <div class='w-full sm:w-[37.5rem] h-full sm:h-[55.5rem] m-auto bg-white sm:rounded-3xl sm:shadow-lg p-1 sm:p-0'>
       <div class="flex w-full h-[4.188rem] items-center">
         <div class="m-6">
           <%= link_to image_tag("close_icon", class: "w-3.5 h-3.5"), "", data: {
@@ -14,16 +14,26 @@
 
       <div class="h-[12.5rem] bg-dark-300"></div>
 
-      <div class="relative">
-        <% if @user.profile_image.attached? %>
-          <%= image_tag @user.profile_image, class: "profile-picture ml-3.5" %>
-        <% else %>
-          <%= image_tag "blank_profile_picture", class: "profile-picture ml-3.5" %>
-        <% end %>
-        <%= image_tag "change_profile_picture_icon", class: "" %>
-      </div>
-
       <%= form_with(model: @user, html: { id: dom_id(@user), class: "sm:w-[30rem] w-full m-auto sm:mx-14 mt-9 flex flex-col gap-y-5" }, url: { action: "update" }, method: "put") do |f| %>
+        <div class="flex w-full sm:ml-[-2.75rem] justify-start sm:mt-[-2.3rem] mt-[-2.3rem]">
+          <div class="profile-picture-box relative flex items-center justify-center">
+            <% if @user.profile_image.attached? %>
+                <%= image_tag @user.profile_image, class: "profile-picture" %>
+            <% else %>
+              <%= image_tag "blank_profile_picture", class: "profile-picture" %>
+            <% end %>
+
+            <div class="absolute">
+              <%= f.label :profile_image do %>
+                <div class="change-profile-picture">
+                  <%= image_tag "change_profile_picture_icon", class: "w-6 h-6" %>
+                </div>
+              <% end %>
+              <%= f.file_field :profile_image, autocomplete: "profile_image", class: "hidden" %>
+            </div>
+          </div>
+        </div>
+
         <div class="w-full">
           <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Name", class: "input" %>
         </div>
@@ -40,10 +50,6 @@
 
         <div class="w-full">
           <%= f.date_field :birth, autocomplete: "birth", placeholder: "Date of birth", class: "input" %>
-        </div>
-
-        <div class="w-full">
-          <%= f.file_field :profile_image, autocomplete: "profile_image", placeholder: "profile image" %>
         </div>
 
         <%= f.submit "Save", class: "btn btn-dark btn-lg", data: { turbo_frame: "_top" } %>

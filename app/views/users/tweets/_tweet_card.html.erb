@@ -1,6 +1,10 @@
 <div class="tweet-card">
   <div class="flex flex-col">
-    <%= image_tag "profile_picture", class: "rounded-full w-10 h-10 mr-3" %>
+    <% if @user.profile_image.attached? %>
+      <%= image_tag @user.profile_image, class: "profile-picture-sm mr-3" %>
+    <% else %>
+      <%= image_tag "blank_profile_picture", class: "profile-picture-sm mr-3" %>
+    <% end %>
   </div>
 
   <div class="flex flex-col w-full pb-2">

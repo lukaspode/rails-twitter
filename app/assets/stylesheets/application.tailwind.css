@@ -81,8 +81,12 @@
     @apply cursor-pointer py-4 w-full inline-block text-center text-dark-400 xl:text-base text-sm font-bold hover:text-primary ease-in duration-100;
   }
 
+  .profile-picture-box{
+    @apply sm:mt-[-4.3rem] mt-[-2.3rem];
+  }
+
   .profile-picture{
-    @apply sm:h-[8.688rem] sm:w-[8.688rem] h-[4.438rem] w-[4.438rem] rounded-full sm:mt-[-4.3rem] mt-[-2.3rem] border-4 border-dark-600 shrink-0;
+    @apply sm:h-[8.688rem] sm:w-[8.688rem] h-[4.438rem] w-[4.438rem] rounded-full border-2 sm:border-4 border-dark-600 shrink-0;
   }
 
   .profile-picture-sm{
@@ -129,5 +133,8 @@
     @apply text-base text-dark-400 font-medium
   }
 
+  .change-profile-picture{
+    @apply w-10 h-10 bg-black/30 items-center flex justify-center rounded-full cursor-pointer 
+  }
 
 }
