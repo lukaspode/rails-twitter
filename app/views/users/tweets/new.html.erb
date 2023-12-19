@@ -21,8 +21,22 @@
           </div>
         </div>
 
-        <div class="flex px-4 items-center h-auto">
-          <%= f.submit "Post", class: "btn btn-md btn-primary w-20", data: { turbo_frame: "_top" } %>
+        <div class="flex items-center w-full justify-between">
+          <div class="flex space-x-4 w-44">
+            <%= f.label :image do %>
+              <%= image_tag "add_image_icon", class: "w-5 h-5" %>
+            <% end %>
+            <%= f.file_field :image, autocomplete: "image", class: "hidden" %>
+
+            <%= image_tag "add_gif_icon", class: "w-5 h-5" %>
+            <%= image_tag "add_poll_icon", class: "w-5 h-5" %>
+            <%= image_tag "add_emoji_icon", class: "w-5 h-5" %>
+
+          </div>
+
+          <div class="flex px-4 items-center h-auto">
+            <%= f.submit "Post", class: "btn btn-md btn-primary w-20", data: { turbo_frame: "_top" } %>
+          </div>
         </div>
       <% end %>
     </div>

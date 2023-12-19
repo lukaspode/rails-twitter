@@ -7,6 +7,8 @@ class Tweet < ApplicationRecord
 
   validates :content, length: { minimum: 1, maximum: 280 }, presence: true
 
+  has_many_attached :images
+
   def liked?
     respond_to?(:liked) ? liked == 1 : false
   end
