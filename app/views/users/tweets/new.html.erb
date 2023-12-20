@@ -23,10 +23,10 @@
 
         <div class="flex items-center w-full justify-between">
           <div class="flex space-x-4 w-44">
-            <%= f.label :image do %>
+            <%= f.label :images do %>
               <%= image_tag "add_image_icon", class: "w-5 h-5" %>
             <% end %>
-            <%= f.file_field :image, autocomplete: "image", class: "hidden" %>
+            <%= f.file_field :images, multiple: true, class: "hidden" %>
 
             <%= image_tag "add_gif_icon", class: "w-5 h-5" %>
             <%= image_tag "add_poll_icon", class: "w-5 h-5" %>

@@ -76,7 +76,7 @@
     </nav>
   </div>
 
-  <div class="flex flex-col mt-2 gap-2 mx-auto items-start sm:w-[37.5rem] w-full overflow-auto">
+  <div class="tweet-box divide-y">
     <% @tweets.each do |tweet| %>
       <%= render "users/tweets/tweet_card", tweet: %>
     <% end %>

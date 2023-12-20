@@ -6,7 +6,7 @@
 
 @layer components {
   .btn {
-    @apply cursor-pointer rounded rounded-full text-center font-normal text-base align-middle w-full ease-in duration-100 py-2.5;
+    @apply cursor-pointer rounded-full text-center font-normal text-base align-middle w-full ease-in duration-100 py-2.5;
   }
   
   .btn-primary {
@@ -25,16 +25,16 @@
     @apply bg-white text-dark-900 hover:text-red-600 border-2 border-dark-200 hover:border-red-600;
   }
 
+  .btn-lg {
+    @apply h-12 font-bold text-sm;
+  }
+  
+  .btn-md {
+    @apply h-10 font-bold text-sm;
+  }
+  
   .btn-sm {
     @apply h-[1.875rem] w-24 ;
-  }
-
-  .btn-md {
-    @apply h-10 w-24 font-bold text-sm;
-  }
-
-  .btn-lg {
-    @apply h-12;
   }
 
   .btn-outline {
@@ -86,11 +86,11 @@
   }
 
   .profile-picture{
-    @apply sm:h-[8.688rem] sm:w-[8.688rem] h-[4.438rem] w-[4.438rem] rounded-full border-2 sm:border-4 border-dark-600 shrink-0;
+    @apply sm:h-[8.688rem] sm:w-[8.688rem] h-[4.438rem] w-[4.438rem] rounded-full border-2 sm:border-4 border-dark-600 shrink-0 object-cover;
   }
 
   .profile-picture-sm{
-    @apply h-10 w-10 rounded-full;
+    @apply h-10 w-10 rounded-full object-cover;
   }
 
   .sidemenu-item{
@@ -105,8 +105,11 @@
     @apply w-[1.875rem] h-[1.875rem] p-[0.065rem];
   }
 
+  .tweet-box{
+    @apply flex flex-col mx-auto items-start sm:w-[37.5rem] w-full overflow-auto divide-y
+  }
   .tweet-card{
-    @apply w-full sm:w-[36.5rem] flex flex-row gap-[0.625rem] px-4 h-auto border-b-2 border-dark-200;
+    @apply w-full sm:w-[36.5rem] flex flex-row px-4 h-auto border-dark-200 pt-2 hover:bg-slate-100/50 ease-in duration-100;
   }
   
   .nav-tweet{

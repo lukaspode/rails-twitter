@@ -33,7 +33,7 @@ module Users
     end
 
     def tweet_params
-      params.require(:tweet).permit(:content)
+      params.require(:tweet).permit(:content, images: [])
     end
   end
 end

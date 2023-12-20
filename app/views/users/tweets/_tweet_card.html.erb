@@ -1,5 +1,5 @@
 <div class="tweet-card">
-  <div class="flex flex-col">
+  <div class="flex flex-col shrink-0">
     <% if @user.profile_image.attached? %>
       <%= image_tag @user.profile_image, class: "profile-picture-sm mr-3" %>
     <% else %>
@@ -18,9 +18,15 @@
       <p class="text-dark-900"><%= tweet.content %><p>
     </div>
 
-    <div class="flex items-start py-[0.62rem]">
-      <p>* * MEDIA CONTENT * *<p>
-    </div>
+    <% if tweet.images.attached? %>
+      <div class="sm:flex-row flex flex-col py-[0.625rem] ">
+        <% tweet.images.each do |image| %>
+          <div class="max-w-max h-auto m-1">
+            <%= image_tag image, class: "rounded-2xl w-full h-full m-1 object-cover" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
 
     <nav class="nav-tweet">
       <div class="nav-tweet-item">

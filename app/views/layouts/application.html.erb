@@ -16,10 +16,10 @@
       <turbo-frame id="new-tweet-modal"></turbo-frame>
       <div class="flex w-full h-full justify-center">
         <%= render "/users/sidemenu", class: "w-[5.5rem] xl:w-[17.2rem]" %>
-        <main class="w-full sm:w-[36.5rem] overflow-y-auto max-h-screen h-full mr-2">
+        <main class="w-full sm:w-[36.5rem] overflow-y-auto h-screen mr-2 border-x">
           <%= yield %>
         </main>
-        <div class="hidden xl:block w-[17.2rem] bg-sky-600">
+        <div class="hidden xl:block w-[17.2rem] bg-slate-200 ml-8">
           Sidenav Right
         </div>
       </div>
