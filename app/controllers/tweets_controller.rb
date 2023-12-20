@@ -3,6 +3,19 @@
 class TweetsController < ApplicationController
   before_action :authenticate_user!
 
+  def new
+    @tweet = Tweet.new
+  end
+
+  def create
+    @tweet = current_user.tweets.new(tweet_params)
+    if @tweet.save
+      redirect_to user_path(current_user), message: 'Tweet successfully created'
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def like
     @tweet = Tweet.find(params[:id])
     liked = @tweet.likes.exists?(user: current_user)
@@ -13,5 +26,11 @@ class TweetsController < ApplicationController
       @like = @tweet.likes.new(user: current_user)
       @like.save
     end
+  end
+
+  private
+
+  def tweet_params
+    params.require(:tweet).permit(:content, images: [])
   end
 end

@@ -9,10 +9,12 @@ Rails.application.routes.draw do
   get 'up' => 'rails/health#show', as: :rails_health_check
 
   resources :users, only: :show do
-    resources :tweets, only: %i[new create show index], controller: 'users/tweets' do
+    resources :tweets, only: %i[show index], controller: 'users/tweets' do
       resources :likes, only: %i[create destroy]
     end
   end
+
+  resources :tweets, only: %i[new create]
 
   resources :tweets, only: [] do
     post :like, on: :member
@@ -25,4 +27,6 @@ Rails.application.routes.draw do
   end
 
   resource :user, only: %i[edit update], controller: :user
+
+  resources :feed, only: :index, controller: :user
 end

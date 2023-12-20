@@ -1,0 +1,13 @@
+<div class="flex flex-col w-full divide-y">
+  <div class="h-14 mx-4 flex items-center justify-between">
+    <h1 class="heading-3 font-bold">Home</h1>
+    <%= image_tag "dark_mode_icon" %>
+  </div>
+  <%= render "tweets/new_tweet" %>
+
+  <div class="tweet-box divide-y">
+    <% @tweets.each do |tweet| %>
+      <%= render "users/tweets/tweet_card", tweet: %>
+    <% end %>
+  </div>
+</div>

@@ -7,10 +7,10 @@
     <% if current_user %>
       <nav class="flex flex-col items-start w-full">
         <ul class="w-full">
-          <li class="sidemenu-item">
+          <%= link_to feed_index_path, class: "sidemenu-item" do %>
             <%= image_tag "home_icon", class: "sidemenu-icon" %>
             <h2 class='sidemenu-title'>Home</h2>
-          </li>
+          <% end %>
 
           <li class="sidemenu-item">
             <%= image_tag "notification_icon", class: "sidemenu-icon" %>
@@ -35,7 +35,7 @@
       </nav>
 
       <div class="flex flex-col gap-3 items-start py-4">
-        <%= link_to new_user_tweet_path(current_user), method: :get, data: { turbo_frame: "new-tweet-modal" } do %>
+        <%= link_to new_tweet_path, method: :get, data: { turbo_frame: "new-tweet-modal" } do %>
           <%= button_to "Tweet", "", class: "btn btn-lg btn-primary px-24 hidden xl:block" %>
           <%= image_tag "add_tweet_icon", class: "block xl:hidden w-12 h-12" %>
         <% end %>

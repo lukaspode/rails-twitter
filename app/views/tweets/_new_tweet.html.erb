@@ -1,0 +1,29 @@
+<div class="flex flex-row py-3 px-4 h-auto">
+  <%= form_with(model: @tweet, class: "w-full h-full flex flex-col gap-y-5", method: "post") do |f| %>
+    <div class="flex border-b-2 h-[8rem]">
+      <%= image_tag "profile_picture", class: "w-10 h-10 rounded-full mr-3" %>
+
+      <div class="w-full">
+        <%= f.text_area :content, autocomplete: "content", placeholder: "What is happening?!", row: 2, class: "input resize-none border-none placeholder:text-base" %>
+      </div>
+    </div>
+
+    <div class="flex items-center w-full justify-between">
+      <div class="flex space-x-4 w-44">
+        <%= f.label :images do %>
+          <%= image_tag "add_image_icon", class: "w-5 h-5" %>
+        <% end %>
+        <%= f.file_field :images, multiple: true, class: "hidden" %>
+
+        <%= image_tag "add_gif_icon", class: "w-5 h-5" %>
+        <%= image_tag "add_poll_icon", class: "w-5 h-5" %>
+        <%= image_tag "add_emoji_icon", class: "w-5 h-5" %>
+
+      </div>
+
+      <div class="flex px-4 items-center h-auto">
+        <%= f.submit "Post", class: "btn btn-md btn-primary w-20", data: { turbo_frame: "_top" } %>
+      </div>
+    </div>
+  <% end %>
+</div>

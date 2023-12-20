@@ -106,7 +106,7 @@
   }
 
   .tweet-box{
-    @apply flex flex-col mx-auto items-start sm:w-[37.5rem] w-full overflow-auto divide-y
+    @apply flex flex-col mx-auto items-start w-full overflow-auto divide-y
   }
   .tweet-card{
     @apply w-full sm:w-[36.5rem] flex flex-row px-4 h-auto border-dark-200 pt-2 hover:bg-slate-100/50 ease-in duration-100;

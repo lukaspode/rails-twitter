@@ -4,6 +4,10 @@ class UserController < ApplicationController
   before_action :authenticate_user!
   before_action :user
 
+  def index
+    @tweets = Tweet.select('tweets.*').order(created_at: :desc)
+  end
+
   def edit; end
 
   def update
