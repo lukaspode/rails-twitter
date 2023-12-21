@@ -10,10 +10,11 @@
   </div>
 
   <div class="flex flex-col w-full pb-2">
-    <div class="flex gap-1 pb-1 items-center">
-      <h3 class="heading-5 font-bold"><%= tweet.user.name %></h3>
-      <p class="text-dark-400">@<%= tweet.user.username %><p>
-      <p class="text-dark-400"><%= time_ago_in_words(tweet.created_at) %></p>
+    <div class="flex gap-1 pb-1 items-center text-[0.938rem] text-dark-400">
+      <h3 class="font-bold text-slate-900"><%= tweet.user.name %></h3>
+      <p class="">@<%= tweet.user.username %></p>
+      <p class="">·</p>
+      <p class=""><%= time_ago_in_words(tweet.created_at) %></p>
     </div>
 
     <div class="flex items-start">
@@ -34,13 +35,13 @@
       <div class="nav-tweet-item">
         <%= link_to "", class: "nav-tweet-link" do %>
           <%= image_tag "comment_icon", class: "nav-tweet-icon" %>
-          <p>11</p>
+          <p>0</p>
         <% end %>
       </div>
       <div class="nav-tweet-item">
         <%= link_to "", class: "nav-tweet-link hover:bg-green-500/20" do %>
           <%= image_tag "retweet_icon", class: "nav-tweet-icon" %>
-          <p>3</p>
+          <p>0</p>
         <% end %>
       </div>
       <div class="nav-tweet-item">
@@ -48,25 +49,25 @@
           <% if tweet.liked? %>
             <%= link_to like_tweet_path(tweet), class: "nav-tweet-link hover:bg-red-500/20", data: { turbo_method: :post } do %>
               <%= image_tag "liked_icon", class: "nav-tweet-icon" %>
-              <p><%= tweet.likes.size %></p>
+              <p><%= tweet.likes_count %></p>
             <% end %>
           <% else %>
             <%= link_to like_tweet_path(tweet), class: "nav-tweet-link hover:bg-red-500/20", data: { turbo_method: :post } do %>
               <%= image_tag "like_icon", class: "nav-tweet-icon" %>
-              <p><%= tweet.likes.size %></p>
+              <p><%= tweet.likes_count %></p>
             <% end %>
           <% end %>
         <% else %>
           <%= link_to new_user_session_path, class: "nav-tweet-link hover:bg-red-500/20", data: { turbo_method: :post } do %>
             <%= image_tag "like_icon", class: "nav-tweet-icon" %>
-            <p><%= tweet.likes.size %></p>
+            <p><%= tweet.likes_count %></p>
           <% end %>
         <% end %>
       </div>
       <div class="nav-tweet-item">
         <%= link_to "", class: "nav-tweet-link" do %>
           <%= image_tag "share_icon", class: "nav-tweet-icon" %>
-          <p>12</p>
+          <p>0</p>
         <% end %>
       </div>
     </nav>

@@ -1,8 +1,11 @@
 <div class="flex flex-row py-3 px-4 h-auto">
   <%= form_with(model: @tweet, class: "w-full h-full flex flex-col gap-y-5", method: "post") do |f| %>
     <div class="flex border-b-2 h-[8rem]">
-      <%= image_tag "profile_picture", class: "w-10 h-10 rounded-full mr-3" %>
-
+      <% if current_user.profile_image.attached? %>
+        <%= image_tag current_user.profile_image, class: "profile-picture-sm sm:mr-3" %>
+      <% else %>
+        <%= image_tag "blank_profile_picture", class: "profile-picture-sm sm:mr-3" %>
+      <% end %>
       <div class="w-full">
         <%= f.text_area :content, autocomplete: "content", placeholder: "What is happening?!", row: 2, class: "input resize-none border-none placeholder:text-base" %>
       </div>
