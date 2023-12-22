@@ -10,6 +10,7 @@ gem 'bootsnap', require: false
 gem 'cssbundling-rails'
 gem 'devise', '~> 4.9', '>= 4.9.3'
 gem 'importmap-rails'
+gem 'pagy', '~> 6.2'
 gem 'pg', '~> 1.1'
 gem 'puma', '>= 5.0'
 gem 'redis', '>= 4.0.1'

@@ -3,6 +3,7 @@
 class UsersController < ApplicationController
   before_action :user
   before_action :authenticate_user!, only: :follow
+  include Pagy::Backend
 
   helper_method :current_user?
 
