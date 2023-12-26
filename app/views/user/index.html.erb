@@ -5,9 +5,15 @@
   </div>
   <%= render "tweets/new_tweet" %>
 
-  <div class="tweet-box divide-y">
-    <% @tweets.each do |tweet| %>
-      <%= render "users/tweets/tweet_card", tweet: %>
-    <% end %>
-  </div>
+  <%= turbo_frame_tag "tweets" do %>
+    <div class="tweet-box divide-y">
+      <% @tweets.each do |tweet| %>
+        <%= render "users/tweets/tweet_card", tweet: %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if @pagy.next.present? %>
+    <%= turbo_frame_tag :pagination, loading: :lazy, src: feed_index_path(format: :turbo_stream, page: @pagy.next) %>
+  <% end %>
 </div>

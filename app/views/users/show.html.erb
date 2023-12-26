@@ -76,9 +76,16 @@
     </nav>
   </div>
 
-  <div class="tweet-box divide-y">
-    <% @tweets.each do |tweet| %>
-      <%= render "users/tweets/tweet_card", tweet: %>
-    <% end %>
-  </div>
+  <%= turbo_frame_tag "tweets" do %>
+    <div class="tweet-box divide-y">
+      <% @tweets.each do |tweet| %>
+        <%= render "users/tweets/tweet_card", tweet: %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if @pagy.next.present? %>
+    <%= turbo_frame_tag :pagination_user, loading: :lazy, src: user_path(@user, format: :turbo_stream, page: @pagy.next) %>
+  <% end %>
+
 </div>

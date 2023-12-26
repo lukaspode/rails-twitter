@@ -3,6 +3,7 @@
 class UsersController < ApplicationController
   before_action :user
   before_action :authenticate_user!, only: :follow
+
   include Pagy::Backend
 
   helper_method :current_user?
@@ -18,6 +19,11 @@ class UsersController < ApplicationController
       @followed = current_user.followed.exists?(followed: @user)
     else
       @tweets = @user.tweets
+    end
+    @pagy, @tweets = pagy_countless(@tweets, items: 10)
+    respond_to do |format|
+      format.html
+      format.turbo_stream
     end
   end
 
