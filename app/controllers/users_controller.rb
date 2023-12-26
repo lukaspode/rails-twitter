@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     else
       @tweets = @user.tweets
     end
-    @pagy, @tweets = pagy_countless(@tweets, items: 10)
+    @pagy, @tweets = pagy_countless(@tweets, items: 20)
     respond_to do |format|
       format.html
       format.turbo_stream

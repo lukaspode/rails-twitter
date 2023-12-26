@@ -1,21 +1,9 @@
 <% @tweets.each do |tweet| %>
-  <%= turbo_stream.append "tweets", partial: "users/tweets/tweet_card", locals: { tweet: } %>
+  <%= turbo_stream.append "tweets_profile", partial: "users/tweets/tweet_card", locals: { tweet: } %>
 <% end %>
 
-<%= turbo_stream.replace :pagination do %>
+<%= turbo_stream.replace :pagination_profile do %>
   <% if @pagy.next.present? %>
-    <%= turbo_frame_tag :pagination, loading: :lazy, src: user_path(@user, format: :turbo_stream, page: @pagy.next) %>
-  <% end %>
-<% end %>
-
-<%= turbo_stream.replace :button do %>
-  <% if current_user? %>
-    <%= link_to "Edit Profile", edit_user_path, class: "btn btn-md btn-secondary sm:w-28 w-24 mt-2.5", data: { turbo_frame: "edit-profile-modal" } %>
-  <% elsif current_user %>
-    <% if @followed %>
-      <%= link_to "Unfollow", follow_user_path, class: "btn btn-md btn-secondary sm:w-28 w-24 mt-2.5", data: { turbo_method: "post" } %>
-    <% else %>
-      <%= link_to "Follow", follow_user_path, class: "btn btn-md btn-secondary sm:w-28 w-24 mt-2.5", data: { turbo_method: "post" } %>
-    <% end %>
+    <%= turbo_frame_tag :pagination_profile, loading: :lazy, src: user_path(@user, format: :turbo_stream, page: @pagy.next) %>
   <% end %>
 <% end %>

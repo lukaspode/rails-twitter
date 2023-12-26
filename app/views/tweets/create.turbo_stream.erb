@@ -1,2 +1,2 @@
-<%= turbo_stream.prepend "tweets", partial: "users/tweets/tweet_card", locals: { tweet: @tweet} %>
+<%= turbo_stream.prepend "new_tweet", partial: "users/tweets/tweet_card", locals: { tweet: @tweet } %>
 <%= turbo_stream.update "new-tweet-modal", "" %>
