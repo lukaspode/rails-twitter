@@ -28,16 +28,19 @@ class UsersController < ApplicationController
   end
 
   def follow
-    followed = current_user.followed.exists?(followed: @user)
+    @followed = current_user.followed.exists?(followed: @user)
 
-    if followed
-      Follow.find_by(followed_id: @user.id, follower_id: current_user.id).destroy!
+    if @followed
+      @follow = Follow.find_by(followed_id: @user.id, follower_id: current_user.id).destroy!
     else
       @follow = current_user.followed.create(followed: @user)
       @follow.save
     end
-
-    redirect_to @user
+    @followed = !@followed
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
   end
 
   private

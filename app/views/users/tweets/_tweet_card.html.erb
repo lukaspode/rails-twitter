@@ -1,75 +1,60 @@
-<div class="tweet-card">
-  <div class="flex flex-col shrink-0">
-    <%= link_to tweet.user do %>
-      <% if tweet.user.profile_image.attached? %>
-        <%= image_tag tweet.user.profile_image, class: "profile-picture-sm mr-3" %>
-      <% else %>
-        <%= image_tag "blank_profile_picture", class: "profile-picture-sm mr-3" %>
-      <% end %>
-    <% end %>
-  </div>
-
-  <div class="flex flex-col w-full pb-2">
-    <div class="flex gap-1 pb-1 items-center text-[0.938rem] text-dark-400">
-      <h3 class="font-bold text-slate-900"><%= tweet.user.name %></h3>
-      <p class="">@<%= tweet.user.username %></p>
-      <p class="">·</p>
-      <p class=""><%= time_ago_in_words(tweet.created_at) %></p>
-    </div>
-
-    <div class="flex items-start">
-      <p class="text-dark-900"><%= tweet.content %><p>
-    </div>
-
-    <% if tweet.images.attached? %>
-      <div class="sm:flex-row flex flex-col py-[0.625rem] ">
-        <% tweet.images.each do |image| %>
-          <div class="max-w-max h-auto m-1">
-            <%= image_tag image, class: "rounded-2xl w-full h-full m-1 object-cover" %>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-
-    <nav class="nav-tweet">
-      <div class="nav-tweet-item">
-        <%= link_to "", class: "nav-tweet-link" do %>
-          <%= image_tag "comment_icon", class: "nav-tweet-icon" %>
-          <p>0</p>
-        <% end %>
-      </div>
-      <div class="nav-tweet-item">
-        <%= link_to "", class: "nav-tweet-link hover:bg-green-500/20" do %>
-          <%= image_tag "retweet_icon", class: "nav-tweet-icon" %>
-          <p>0</p>
-        <% end %>
-      </div>
-      <div class="nav-tweet-item">
-        <% if current_user %>
-          <% if tweet.liked? %>
-            <%= link_to like_tweet_path(tweet), class: "nav-tweet-link hover:bg-red-500/20", data: { turbo_method: :post } do %>
-              <%= image_tag "liked_icon", class: "nav-tweet-icon" %>
-              <p><%= tweet.likes_count %></p>
-            <% end %>
-          <% else %>
-            <%= link_to like_tweet_path(tweet), class: "nav-tweet-link hover:bg-red-500/20", data: { turbo_method: :post } do %>
-              <%= image_tag "like_icon", class: "nav-tweet-icon" %>
-              <p><%= tweet.likes_count %></p>
-            <% end %>
-          <% end %>
+<%= turbo_frame_tag "tweet_#{tweet.id}" do %>
+  <div class="tweet-card">
+    <div class="flex flex-col shrink-0">
+      <%= link_to tweet.user do %>
+        <% if tweet.user.profile_image.attached? %>
+          <%= image_tag tweet.user.profile_image, class: "profile-picture-sm mr-3" %>
         <% else %>
-          <%= link_to new_user_session_path, class: "nav-tweet-link hover:bg-red-500/20", data: { turbo_method: :post } do %>
-            <%= image_tag "like_icon", class: "nav-tweet-icon" %>
-            <p><%= tweet.likes_count %></p>
+          <%= image_tag "blank_profile_picture", class: "profile-picture-sm mr-3" %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="flex flex-col w-full pb-2">
+      <div class="flex gap-1 pb-1 items-center text-[0.938rem] text-dark-400">
+        <h3 class="font-bold text-slate-900"><%= tweet.user.name %></h3>
+        <p class="">@<%= tweet.user.username %></p>
+        <p class="">·</p>
+        <p class=""><%= time_ago_in_words(tweet.created_at) %></p>
+      </div>
+
+      <div class="flex items-start">
+        <p class="text-dark-900"><%= tweet.content %><p>
+      </div>
+
+      <% if tweet.images.attached? %>
+        <div class="sm:flex-row flex flex-col py-[0.625rem] ">
+          <% tweet.images.each do |image| %>
+            <div class="max-w-max h-auto m-1">
+              <%= image_tag image, class: "rounded-2xl w-full h-full m-1 object-cover" %>
+            </div>
           <% end %>
-        <% end %>
-      </div>
-      <div class="nav-tweet-item">
-        <%= link_to "", class: "nav-tweet-link" do %>
-          <%= image_tag "share_icon", class: "nav-tweet-icon" %>
-          <p>0</p>
-        <% end %>
-      </div>
-    </nav>
+        </div>
+      <% end %>
+
+      <nav class="nav-tweet">
+        <div class="nav-tweet-item">
+          <%= link_to "", class: "nav-tweet-link" do %>
+            <%= image_tag "comment_icon", class: "nav-tweet-icon" %>
+            <p>0</p>
+          <% end %>
+        </div>
+        <div class="nav-tweet-item">
+          <%= link_to "", class: "nav-tweet-link hover:bg-green-500/20" do %>
+            <%= image_tag "retweet_icon", class: "nav-tweet-icon" %>
+            <p>0</p>
+          <% end %>
+        </div>
+        <div class="nav-tweet-item">
+          <%= render "tweets/like_button", tweet: %>
+        </div>
+        <div class="nav-tweet-item">
+          <%= link_to "", class: "nav-tweet-link" do %>
+            <%= image_tag "share_icon", class: "nav-tweet-icon" %>
+            <p>0</p>
+          <% end %>
+        </div>
+      </nav>
+    </div>
   </div>
-</div>
+<% end %>
