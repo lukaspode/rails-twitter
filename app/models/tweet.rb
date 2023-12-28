@@ -12,4 +12,12 @@ class Tweet < ApplicationRecord
   def liked?
     respond_to?(:liked) ? liked == 1 : false
   end
+
+  def self.ransackable_attributes(_auth_object = nil)
+    ['content']
+  end
+
+  def self.ransackable_associations(_auth_object = nil)
+    %w[]
+  end
 end

@@ -29,4 +29,6 @@ Rails.application.routes.draw do
   resource :user, only: %i[edit update], controller: :user
 
   resources :feed, only: :index, controller: :user
+
+  resources :search, only: :index
 end

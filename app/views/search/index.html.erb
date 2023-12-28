@@ -1,0 +1,37 @@
+<div class="flex flex-col w-full sm:w-[36.5rem]">
+
+  <%= render "users/header_profile", user: current_user %>
+
+  <%= search_form_for @q, url: search_index_path do |f| %>
+      <%= f.search_field :content_cont, class: "w-full bg-slate-200 h-9 rounded-2xl" %>
+      <%= f.submit %>
+    <% end %>
+
+    <%= search_form_for @f, url: search_index_path do |f| %>
+      <%= f.search_field :username_cont, class: "w-full bg-slate-200 h-9 rounded-2xl" %>
+      <%= f.submit %>
+    <% end %>
+
+  <div class="header-title">
+    <h1 class="heading-3 font-bold">People</h1>
+  </div>
+
+  <div class="flex flex-col mt-2 gap-2 mx-auto items-start sm:w-[37.5rem] w-full overflow-auto border-b-2">
+    <% @filtered_users.each do |u| %>
+      <%= render "users/users_list", user: u %>
+    <% end %>
+  </div>
+
+  <%= turbo_frame_tag "tweets_search" do %>
+    <div class="tweet-box divide-y">
+      <% @filtered_tweets.each do |t| %>
+        <%= render "users/tweets/tweet_card", tweet: t %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if @pagy.next.present? %>
+    <%= turbo_frame_tag :pagination_search, loading: :lazy, src: feed_index_path(format: :turbo_stream, page: @pagy.next) %>
+  <% end %>
+
+</div>

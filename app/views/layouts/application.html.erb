@@ -19,9 +19,7 @@
         <main class="w-full sm:w-[36.5rem] overflow-y-auto h-screen mr-2 border-x">
           <%= yield %>
         </main>
-        <div class="hidden xl:block w-[17.2rem] bg-slate-200 ml-8">
-          Sidenav Right
-        </div>
+        <%= render "/users/sidecolumn" %>
       </div>
   </body>
 </html>

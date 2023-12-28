@@ -1,6 +1,6 @@
 
 <div class="flex flex-col w-full">
-  <%= render "users/header_profile", object: @user %>
+  <%= render "users/header_profile", user: @user %>
 
   <div class="h-min w-full">
     <div class="h-[12.5rem] w-full shrink-0 bg-dark-300"></div>
@@ -16,7 +16,7 @@
         </div>
 
         <%= turbo_frame_tag "follow_button" do %>
-          <%= render "users/follow_button", followed: @followed %>
+          <%= render "users/follow_button", class: "btn btn-md btn-secondary sm:w-28 w-24 mt-2.5", followed: @followed %>
         <% end %>
       </div>
 
@@ -73,6 +73,7 @@
   <% if current_user? %>
     <%= turbo_frame_tag "new_tweet" %>
   <% end %>
+  
   <%= turbo_frame_tag "tweets_profile" do %>
     <div class="tweet-box divide-y">
       <% @tweets.each do |tweet| %>

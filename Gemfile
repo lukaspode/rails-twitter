@@ -13,6 +13,7 @@ gem 'importmap-rails'
 gem 'pagy', '~> 6.2'
 gem 'pg', '~> 1.1'
 gem 'puma', '>= 5.0'
+gem 'ransack', '~> 4.1', '>= 4.1.1'
 gem 'redis', '>= 4.0.1'
 gem 'rubocop', '~> 1.57', '>= 1.57.2', require: false
 gem 'rubocop-rails', '~> 2.22', '>= 2.22.1', require: false

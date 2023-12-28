@@ -34,4 +34,12 @@ class User < ApplicationRecord
 
     errors.add(:birth, 'your age must be over 18')
   end
+
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[username name]
+  end
+
+  def self.ransackable_associations(_auth_object = nil)
+    %w[]
+  end
 end

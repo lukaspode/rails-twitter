@@ -18,7 +18,7 @@
   }
 
   .btn-dark {
-    @apply bg-dark-900 text-white hover:btn-primary;
+    @apply bg-dark-900 text-white hover:bg-dark-500 hover:border-dark-500 border-2 border-dark-900;
   }
 
   .btn-white {
@@ -34,7 +34,7 @@
   }
   
   .btn-sm {
-    @apply h-[1.875rem] w-24 ;
+    @apply h-[1.875rem] font-bold text-sm p-0;
   }
 
   .btn-outline {
@@ -49,6 +49,10 @@
    @apply bg-red-300 rounded-md text-red-800 px-4 py-2; 
   }
 
+  .header-title{
+    @apply h-14 px-4 py-3 flex items-center justify-between
+  }
+  
   .heading-2{
     @apply text-2xl font-semibold text-dark-900;
   }
@@ -127,6 +131,10 @@
   .nav-tweet-icon{
     @apply w-3.5 h-3.5;
   } 
+
+  .user-card{
+    @apply flex p-3 w-full sm:w-[36.5rem] hover:bg-slate-100/50 ease-in duration-100 cursor-pointer;
+  }
 
   .name-text{
     @apply text-base text-dark-900 font-bold
