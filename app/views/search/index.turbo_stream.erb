@@ -2,8 +2,8 @@
   <%= turbo_stream.append "tweets_search", partial: "users/tweets/tweet_card", locals: { tweet: } %>
 <% end %>
 
-<%= turbo_stream.replace :tweets_search do %>
+<%= turbo_stream.replace :pagination_search do %>
   <% if @pagy.next.present? %>
-    <%= turbo_frame_tag :tweets_search, loading: :lazy, src: search_index_path(format: :turbo_stream, page: @pagy.next) %>
+    <%= turbo_frame_tag :pagination_search, loading: :lazy, src: search_index_path(format: :turbo_stream, page: @pagy.next) %>
   <% end %>
 <% end %>

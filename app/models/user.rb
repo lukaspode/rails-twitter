@@ -27,19 +27,19 @@ class User < ApplicationRecord
     respond_to?(:following) ? following == true : false
   end
 
-  private
-
-  def validate_age
-    return unless birth.present? && (birth > 18.years.ago.to_date)
-
-    errors.add(:birth, 'your age must be over 18')
-  end
-
   def self.ransackable_attributes(_auth_object = nil)
     %w[username name]
   end
 
   def self.ransackable_associations(_auth_object = nil)
     %w[]
+  end
+
+  private
+
+  def validate_age
+    return unless birth.present? && (birth > 18.years.ago.to_date)
+
+    errors.add(:birth, 'your age must be over 18')
   end
 end

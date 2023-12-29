@@ -1,4 +1,4 @@
-<div class="flex flex-col w-[5.5rem] xl:w-[17.2rem] px-2.5 h-screen">
+<div class="flex flex-col w-[5.5rem] xl:w-[17.2rem] px-2.5 mt-2 h-screen">
   <div class="flex flex-col w-full">
     <div class="flex-row p-3 sm:block">
       <%= link_to image_tag("twitter_icon"), "#" %>
@@ -46,7 +46,7 @@
   <% if current_user %>
     <div class="mt-auto mb-4">
       <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>
-        <div class="flex items-center p-1 hover:bg-slate-200 hover:rounded-full ease-in duration-100">
+        <div class="flex items-center p-1 hover:bg-dark-200 hover:rounded-full ease-in duration-100">
           <% if current_user.profile_image.attached? %>
             <%= image_tag current_user.profile_image, class: "profile-picture-sm sm:mr-3" %>
           <% else %>

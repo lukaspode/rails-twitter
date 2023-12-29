@@ -1,33 +1,32 @@
 <div class="user-card">
-  <%= link_to user, class: "flex flex-row w-full" do %>
-    <div class="flex-col w-10 mr-3">
+  <div class="flex-col w-10 mr-3">
+    <%= link_to user, class: "flex flex-row w-full", data: { turbo_frame: "_top" } do %>
       <% if user.profile_image.attached? %>
         <%= image_tag user.profile_image, class: "profile-picture-sm" %>
       <% else %>
         <%= image_tag "blank_profile_picture", class: "profile-picture-sm" %>
       <% end %>
-    </div>
-
-    <div class="flex-col w-full">
-      <div class="flex justify-between">
-        <div>
-            <p class="name-text"><%= user.name %></p>
-            <p class="username-text">@<%= user.username %></p>
-        </div>
-        <div>
-        <% if current_user %>
-          <% if user.following.present? and user.following? %>
-              <%= button_to "Following", follow_user_path(user), class: "btn btn-sm btn-white w-24", data: { turbo_method: "post" } %>
-          <% else user.following.present? and not user.following? %>
-              <%= button_to "Follow", follow_user_path(user), class: "btn btn-sm btn-dark w-20", data: { turbo_method: "post" } %>
-          <% end %>
+    <% end %>
+  </div>
+  <div class="flex-col w-full">
+    <div class="flex justify-between">
+      <div>
+          <p class="name-text"><%= user.name %></p>
+          <p class="username-text">@<%= user.username %></p>
+      </div>
+      <div>
+      <% if current_user %>
+        <% if followed %>
+            <%= button_to "Following", follow_user_path(user), class: "btn btn-sm btn-white w-24", data: { turbo_method: "post" } %>
+        <% elsif not followed %>
+            <%= button_to "Follow", follow_user_path(user), class: "btn btn-sm btn-dark w-20", data: { turbo_method: "post" } %>
         <% end %>
-        </div>
-      </div>
-
-      <div class="pt-1">
-        <p class="text-dark-900 text-base"><%= user.bio %></p>
+      <% end %>
       </div>
     </div>
-  <% end %>
+
+    <div class="pt-1">
+      <p class="text-dark-900 text-base"><%= user.bio %></p>
+    </div>
+  </div>
 </div>

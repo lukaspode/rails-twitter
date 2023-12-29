@@ -6,11 +6,11 @@ class SearchController < ApplicationController
   include Pagy::Backend
 
   def index
-    @q = Tweet.ransack(params[:q])
+    @q = Tweet.ransack(content_cont: params[:q])
     @filtered_tweets = @q.result(distinct: true)
     @pagy, @filtered_tweets = pagy_countless(@filtered_tweets, items: 10)
 
-    @f = User.ransack(params[:q])
+    @f = User.ransack(name_or_username_cont: params[:q])
     @filtered_users = @f.result(distinct: true)
 
     select_stmt = <<-SQL.squish

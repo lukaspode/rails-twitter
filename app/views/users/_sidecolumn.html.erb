@@ -1,16 +1,88 @@
-<div class="hidden xl:block w-[17.2rem]  ml-8 pt-2 gap-4 flex-col">
+<div class="hidden xl:block flex-col w-[22rem] ml-8 mt-2 pt-2">
+  <div class="flex flex-col gap-4">
+    <%= form_with(url: search_index_path, class: "w-full", method: "get") do |f| %>
+      <div class="w-full flex items-center bg-dark-100 h-10 rounded-2xl border-none">
+        <%= image_tag "search_icon", class: "w-[1.235rem] h-[1.235rem] ml-2" %>
+        <%= f.text_field :q, class: "search-input", placeholder: "Search Twitter" %>
+      </div>
+    <% end %>
+    <div class="flex flex-col w-full bg-dark-100 rounded-2xl divide-y">
 
-  
+      <div class="px-4 py-3">
+        <h1 class="heading-3">Who to follow</h1>
+      </div>
 
-  <div>
-    <h1 class="heading-2">You might like</h1>
+      <div class="sidecol-user-card justify-between">
+        <div class="flex gap-2 items-center">
+          <div class="profile-picture-sm bg-lime-300">
+          </div>
+          <div>
+              <p class="name-text">Name 1</p>
+              <p class="username-text">@Username_1</p>
+          </div>
+        </div>
+        <%= button_to "Follow", "", class: "btn btn-sm btn-primary w-20" %>
+      </div>
+
+      <div class="sidecol-user-card justify-between">
+        <div class="flex gap-2 items-center">
+          <div class="profile-picture-sm bg-amber-500">
+          </div>
+          <div>
+              <p class="name-text">Name_2</p>
+              <p class="username-text">@Username_2</p>
+          </div>
+        </div>
+        <%= button_to "Follow", "", class: "btn btn-sm btn-primary w-20" %>
+      </div>
+    </div>
+
+    <div class="flex flex-col w-full bg-dark-100 rounded-2xl divide-y">
+      <div class="px-4 py-3">
+        <h1 class="heading-3">What's happening</h1>
+      </div>
+
+      <div class="sidecol-news-card">
+        <div class="sidecol-news-info">
+          <p class="text-dark-400 text-[0.875rem]">COVID19 - Last night</p>
+          <p class="text-dark-900 text-[0.938rem]">England’s Chief Medical Officer says the UK is at the most dangerous time of the pandemic</p>
+          <p class="text-dark-400 text-[0.875rem]">trending with</p>
+        </div>
+
+        <div class="flex flex-col w-[4.375rem] h-[4.375rem] bg-lime-300 rounded-xl">
+        </div>
+      </div>
+
+      <div class="sidecol-news-card">
+        <div class="sidecol-news-info">
+          <p class="text-dark-400 text-[0.875rem]">US news - 4h ago</p>
+          <p class="text-dark-900 text-[0.938rem]">Parler may go offline following suspensions by Amazon, Apple and Google</p>
+          <p class="text-dark-400 text-[0.875rem]">trending with</p>
+        </div>
+
+        <div class="flex flex-col w-[4.375rem] h-[4.375rem] bg-red-400 rounded-xl">
+        </div>
+      </div>
+
+      <div class="sidecol-news-card">
+        <div class="sidecol-news-info">
+          <p class="text-dark-400 text-[0.875rem]">India - 1h ago</p>
+          <p class="text-dark-900 text-[0.938rem]">India vs Australia: India hold on to earn a draw on Day 5 in Sydney Test</p>
+          <p class="text-dark-400 text-[0.875rem]">trending with</p>
+        </div>
+
+        <div class="flex flex-col w-[4.375rem] h-[4.375rem] bg-yellow-300 rounded-xl">
+        </div>
+      </div>
+
+      <div class="flex p-4">
+        <p class="text-primary text-[0.938rem]">Show more</p>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-[0.813rem]">Terms of Service Privacy Policy Cookie Policy Ads info More © 2021 Twitter, Inc.</p>
+    </div>
   </div>
 
-  <div>
-    <h1 class="heading-2">What's happening</h1>
-  </div>
-
-  <div>
-    <p>Terms of Service Privacy Policy Cookie Policy Ads info More © 2021 Twitter, Inc.</p>
-  </div>
 </div>

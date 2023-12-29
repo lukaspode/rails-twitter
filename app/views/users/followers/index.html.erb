@@ -5,7 +5,9 @@
   </div>
   <div class="flex flex-col mt-2 gap-2 mx-auto items-start sm:w-[37.5rem] w-full overflow-auto">
     <% @followers.each do |user| %>
-        <%= render "users/users_list", user: %>
+      <%= turbo_frame_tag "user_#{user.id}", class: "w-full" do %>
+        <%= render "users/users_list", user:, followed: user.following? %>
+      <% end %>
     <% end %>
   </div>
 </div>

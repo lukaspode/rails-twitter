@@ -7,7 +7,7 @@
         <%= image_tag "blank_profile_picture", class: "profile-picture-sm sm:mr-3" %>
       <% end %>
       <div class="w-full">
-        <%= f.text_area :content, autocomplete: "content", placeholder: "What is happening?!", row: 2, class: "input resize-none border-none placeholder:text-base" %>
+        <%= f.text_area :content, required: true, autocomplete: "content", placeholder: "What is happening?!", row: 2, class: "input resize-none border-none placeholder:text-base" %>
       </div>
     </div>
 
@@ -25,7 +25,7 @@
       </div>
 
       <div class="flex px-4 items-center h-auto">
-        <%= f.submit "Post", class: "btn btn-md btn-primary w-20", data: { turbo_frame: "tweets_profile" } %>
+        <%= f.submit "Post", class: "btn btn-md btn-primary w-20", data: { turbo_frame: "tweets_profile" }%>
       </div>
     </div>
   <% end %>

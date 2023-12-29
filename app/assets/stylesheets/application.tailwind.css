@@ -113,7 +113,7 @@
     @apply flex flex-col mx-auto items-start w-full overflow-auto divide-y
   }
   .tweet-card{
-    @apply w-full sm:w-[36.5rem] flex flex-row px-4 h-auto border-dark-200 pt-2 hover:bg-slate-100/50 ease-in duration-100;
+    @apply w-full sm:w-[36.5rem] flex flex-row px-4 h-auto border-dark-200 pt-2 hover:bg-dark-100 ease-in duration-100;
   }
   
   .nav-tweet{
@@ -133,7 +133,7 @@
   } 
 
   .user-card{
-    @apply flex p-3 w-full sm:w-[36.5rem] hover:bg-slate-100/50 ease-in duration-100 cursor-pointer;
+    @apply flex p-3 w-full sm:w-[36.5rem] hover:bg-dark-100 ease-in duration-100 cursor-pointer;
   }
 
   .name-text{
@@ -148,4 +148,19 @@
     @apply w-10 h-10 bg-black/30 items-center flex justify-center rounded-full cursor-pointer 
   }
 
+  .sidecol-user-card{
+    @apply flex px-4 py-3
+  }
+
+  .sidecol-news-card{
+    @apply flex px-4 py-3 gap-4
+  }
+
+  .sidecol-news-info{
+    @apply flex flex-col gap-1 w-56
+  }
+
+  .search-input{
+    @apply w-full bg-dark-100 h-10 rounded-2xl border-none border-transparent focus:border-transparent focus:ring-0
+  }
 }

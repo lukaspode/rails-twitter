@@ -1,1 +1,2 @@
 <%= turbo_stream.update "follow_button", partial: "users/follow_button", locals: { followed: @followed } %>
+<%= turbo_stream.update "user_#{@user.id}", partial: "users/users_list", locals: { user: @user, followed: @followed } %>

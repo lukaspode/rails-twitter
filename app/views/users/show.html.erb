@@ -73,7 +73,7 @@
   <% if current_user? %>
     <%= turbo_frame_tag "new_tweet" %>
   <% end %>
-  
+
   <%= turbo_frame_tag "tweets_profile" do %>
     <div class="tweet-box divide-y">
       <% @tweets.each do |tweet| %>
