@@ -6,12 +6,15 @@ class SearchController < ApplicationController
   include Pagy::Backend
 
   def index
-    @q = Tweet.ransack(content_cont: params[:q])
-    @filtered_tweets = @q.result(distinct: true)
-    @pagy, @filtered_tweets = pagy_countless(@filtered_tweets, items: 10)
-
     @f = User.ransack(name_or_username_cont: params[:q])
+    # @filtered_users = User.search_by_email_or_username(params[:q])
     @filtered_users = @f.result(distinct: true)
+
+    @q = Tweet.ransack(content_cont: params[:q])
+    # @q = Tweet.search_by_content(params[:q])
+
+    @filtered_tweets = @q.result.order(created_at: :desc)
+    @pagy, @filtered_tweets = pagy_countless(@filtered_tweets, items: 100)
 
     select_stmt = <<-SQL.squish
         users.*,

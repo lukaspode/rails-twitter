@@ -12,7 +12,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Log in", class: "btn btn-dark btn-lg" %>
+        <%= f.submit "Log in", class: "btn btn-dark btn-lg", data: { turbo: false, turbo_frame: "_top" } %>
       </div>
 
       <%= link_to "Forgot Password?", new_user_password_path, class: " btn btn-outline hover:bg-black hover:text-white" %>

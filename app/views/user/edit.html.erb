@@ -52,7 +52,7 @@
           <%= f.date_field :birth, autocomplete: "birth", placeholder: "Date of birth", class: "input" %>
         </div>
 
-        <%= f.submit "Save", class: "btn btn-dark btn-lg", data: { turbo_frame: "_top" } %>
+        <%= f.submit "Save", class: "btn btn-dark btn-lg", data: { turbo_frame: "_top", turbo: false } %>
       <% end %>
     </div>
   </div>

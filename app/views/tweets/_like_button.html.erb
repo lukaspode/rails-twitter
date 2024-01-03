@@ -11,7 +11,7 @@
     <% end %>
   <% end %>
 <% else %>
-  <%= link_to new_user_session_path, class: "nav-tweet-link hover:bg-red-500/20", data: { turbo_method: :post } do %>
+  <%= link_to new_user_session_path, class: "nav-tweet-link hover:bg-red-500/20", data: { turbo_method: :post, turbo_frame: "_top" } do %>
     <%= image_tag "like_icon", class: "nav-tweet-icon" %>
     <p><%= tweet.likes_count %></p>
   <% end %>

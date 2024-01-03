@@ -32,7 +32,7 @@ class TweetsController < ApplicationController
     @tweet.reload
     respond_to do |format|
       format.html
-      format.turbo_stream
+      format.turbo_stream if current_user
     end
   end
 
