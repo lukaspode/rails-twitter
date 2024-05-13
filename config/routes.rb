@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   }
   get 'up' => 'rails/health#show', as: :rails_health_check
 
+  root to: 'user#index'
   resources :users, only: :show do
     resources :tweets, only: %i[show index], controller: 'users/tweets' do
       resources :likes, only: %i[create destroy]

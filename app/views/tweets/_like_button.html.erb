@@ -1,3 +1,4 @@
+<div id="like_button_<%= tweet.id %>">
 <% if current_user %>
   <% if tweet.liked? %>
     <%= link_to like_tweet_path(tweet), class: "nav-tweet-link hover:bg-red-500/20", data: { turbo_method: :post } do %>
@@ -16,3 +17,4 @@
     <p><%= tweet.likes_count %></p>
   <% end %>
 <% end %>
+</div>
