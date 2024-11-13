@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 class TweetsController < ApplicationController
+  def show
+    @user = User.find(params[:user_id])
+    @tweet = @user.tweets.find(params[:id])
+  end
+
   def new
     @tweet = Tweet.new
   end

@@ -35,7 +35,7 @@
     </nav>
 
     <div class="flex flex-col gap-3 items-start py-4">
-      <%= button_to "Tweet", new_tweet_path, method: :get, data: { turbo_frame: "new-tweet-modal" }, class: "btn btn-lg btn-primary px-24 xl:block hidden" %>
+      <%= button_to "Tweet", new_user_tweet_path(current_user), method: :get, data: { turbo_frame: "new-tweet-modal" }, class: "btn btn-lg btn-primary px-24 xl:block hidden" %>
       <%= image_tag "add_tweet_icon", class: "block xl:hidden w-12 h-12" %>
     </div>
   </div>
